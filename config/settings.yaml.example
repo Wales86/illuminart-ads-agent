@@ -1,0 +1,37 @@
+# =============================================================================
+# Konfiguracja agenta audytu marketingowego
+# =============================================================================
+# Wypełnij poniższe pola swoimi danymi.
+# Instrukcja jak je uzyskać: README.md
+# =============================================================================
+
+ga4:
+  # GA4 Property ID — znajdziesz w GA4 → Admin → Property Settings
+  # Format: same cyfry, np. "123456789"
+  property_id: ""
+
+google_ads:
+  # Google Ads Customer ID — znajdziesz w prawym górnym rogu panelu Ads
+  # Format: "XXX-XXX-XXXX" (z myślnikami) lub "XXXXXXXXXX" (bez)
+  customer_id: ""
+
+  # Developer Token — Google Ads → Tools & Settings → API Center
+  developer_token: ""
+
+  # Login Customer ID — zostaw puste, chyba że korzystasz z konta MCC
+  login_customer_id: ""
+
+gsc:
+  # URL strony w Search Console — musi dokładnie odpowiadać wpisowi w GSC
+  # Np. "https://example.com" lub "sc-domain:example.com"
+  site_url: ""
+
+report:
+  # Domyślny zakres analizy w dniach
+  default_period_days: 14
+
+  # Ile poprzednich raportów załadować jako kontekst historyczny
+  history_reports_to_load: 3
+
+  # Język raportu
+  language: "pl"

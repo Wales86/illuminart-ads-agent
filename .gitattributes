@@ -1,0 +1,13 @@
+# Wymuszaj LF dla wszystkich plików tekstowych
+* text=auto eol=lf
+
+# Python
+*.py text eol=lf
+
+# Markdown / YAML
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Shell
+*.sh text eol=lf

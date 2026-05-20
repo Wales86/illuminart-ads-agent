@@ -1,0 +1,12 @@
+# Google API clients
+google-analytics-data>=0.18.0
+google-ads>=25.0.0
+google-api-python-client>=2.100.0
+
+# OAuth authentication
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.2.0
+
+# Configuration
+pyyaml>=6.0

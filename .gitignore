@@ -1,0 +1,24 @@
+config/settings.yaml
+
+# OAuth credentials — NEVER commit
+config/credentials.json
+config/token.json
+
+# Raw data from API (per-run directories)
+data/
+    
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
