@@ -3,7 +3,7 @@ name: Deploy Report to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
     paths:
       - "reports/current_report.md"
       - "reports/history/**"
