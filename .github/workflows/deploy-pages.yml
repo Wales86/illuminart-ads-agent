@@ -4,9 +4,6 @@ name: Deploy Report to GitHub Pages
 on:
   push:
     branches: ["master"]
-    paths:
-      - "reports/current_report.md"
-      - "reports/history/**"
 
   # Ręczne uruchomienie
   workflow_dispatch:
@@ -36,6 +33,9 @@ jobs:
           
           # Główna strona — aktualny raport (zapisujemy jako .md, by Jekyll zrenderował zawartość)
           cat > _site/index.md << 'HEADER'
+          ---
+          layout: null
+          ---
           <!DOCTYPE html>
           <html lang="pl">
           <head>
@@ -115,6 +115,9 @@ jobs:
               
               # Pliki historyczne dostaną nagłówek podobnie jak index
               cat > "_site/report-${basename}.md" << 'HIST_HEADER'
+          ---
+          layout: null
+          ---
           <!DOCTYPE html>
           <html lang="pl">
           <head>
