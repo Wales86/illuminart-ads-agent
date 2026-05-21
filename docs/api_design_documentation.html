@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IlluminArt Ads Audit — API Design Documentation</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; font-size: 14px; }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  h2 { font-size: 16px; margin-top: 28px; color: #1a1a1a; }
+  h3 { font-size: 14px; color: #444; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th { background: #f0f0f0; text-align: left; padding: 8px; border: 1px solid #ccc; }
+  td { padding: 8px; border: 1px solid #ccc; vertical-align: top; }
+  .label { font-weight: bold; width: 180px; }
+  ul { margin: 6px 0; padding-left: 20px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #ffc107; padding: 10px 14px; margin: 14px 0; font-size: 13px; }
+  @media print { body { margin: 20px; } }
+</style>
+</head>
+<body>
+
+<h1>IlluminArt Ads Audit Tool — API Design Documentation</h1>
+
+<table>
+  <tr><td class="label">Company</td><td>IlluminArt — e-commerce store, Poland</td></tr>
+  <tr><td class="label">Tool name</td><td>IlluminArt Ads Audit</td></tr>
+  <tr><td class="label">Document version</td><td>1.0</td></tr>
+  <tr><td class="label">Date</td><td>May 2026</td></tr>
+  <tr><td class="label">Google Ads Account</td><td>240-061-2384</td></tr>
+  <tr><td class="label">MCC Account</td><td>597-759-5591</td></tr>
+</table>
+
+<h2>1. Purpose and Business Context</h2>
+<p>IlluminArt is a small Polish e-commerce retailer selling art prints and decorative products. The company uses Google Ads to run Search and Shopping campaigns managed by a third-party marketing agency.</p>
+<p>This tool is an <strong>internal, read-only reporting utility</strong> built to retrieve campaign performance data from the Google Ads API and generate bi-weekly audit reports. The reports help the business owner evaluate campaign effectiveness, identify wasted spend, and verify the quality of the agency's work.</p>
+
+<div class="note">⚠ This tool accesses only the company's own single Google Ads account. It does not manage third-party accounts and is not distributed to external users.</div>
+
+<h2>2. System Architecture</h2>
+
+<h3>2.1 Components</h3>
+<table>
+  <tr><th>Component</th><th>Technology</th><th>Description</th></tr>
+  <tr><td>Data Fetcher</td><td>Python 3.12</td><td>Scripts that call the Google Ads API and save data as JSON files</td></tr>
+  <tr><td>Report Generator</td><td>AI language model</td><td>Analyzes fetched data and produces a Markdown audit report</td></tr>
+  <tr><td>Configuration</td><td>YAML file</td><td>Stores account IDs and API credentials (never committed to version control)</td></tr>
+  <tr><td>Storage</td><td>Local filesystem</td><td>Raw JSON data stored locally, never uploaded to external servers</td></tr>
+</table>
+
+<h3>2.2 Data Flow</h3>
+<ol>
+  <li>User triggers the audit workflow manually (approximately every 2 weeks)</li>
+  <li>Python scripts authenticate via OAuth 2.0 and call the Google Ads API</li>
+  <li>Retrieved data is saved locally as JSON files</li>
+  <li>AI agent reads the JSON files and produces a Markdown report</li>
+  <li>Report is stored locally and reviewed by the business owner</li>
+</ol>
+
+<h2>3. Google Ads API Usage</h2>
+
+<h3>3.1 API Calls Made</h3>
+<table>
+  <tr><th>Resource</th><th>Operation</th><th>Purpose</th></tr>
+  <tr><td>campaign</td><td>READ (GoogleAdsService.Search)</td><td>Campaign performance: cost, impressions, clicks, conversions, ROAS</td></tr>
+  <tr><td>ad_group</td><td>READ (GoogleAdsService.Search)</td><td>Ad group level performance metrics</td></tr>
+  <tr><td>keyword_view</td><td>READ (GoogleAdsService.Search)</td><td>Keyword performance and Quality Score</td></tr>
+  <tr><td>search_term_view</td><td>READ (GoogleAdsService.Search)</td><td>Actual search terms triggering ads (wasted spend analysis)</td></tr>
+  <tr><td>change_event</td><td>READ (GoogleAdsService.Search)</td><td>Change history — what the agency modified in the account</td></tr>
+</table>
+
+<h3>3.2 Operations NOT Performed</h3>
+<ul>
+  <li>No campaign creation or modification</li>
+  <li>No bid changes or budget modifications</li>
+  <li>No conversion uploads or remarketing list management</li>
+  <li>No access to payment or billing information</li>
+  <li>No access to third-party advertiser accounts</li>
+</ul>
+
+<h3>3.3 Call Volume</h3>
+<p>The tool runs approximately <strong>twice per month</strong>. Each run executes 5 API queries (campaigns, ad groups, keywords, search terms, change history) for a single date range. Total monthly API calls: approximately <strong>10 queries per month</strong>.</p>
+
+<h2>4. Authentication &amp; Security</h2>
+<table>
+  <tr><th>Aspect</th><th>Implementation</th></tr>
+  <tr><td>Authentication method</td><td>OAuth 2.0 (Desktop application flow)</td></tr>
+  <tr><td>Token storage</td><td>Local filesystem only, excluded from version control via .gitignore</td></tr>
+  <tr><td>Credential sharing</td><td>None — tool is used by a single authorized user</td></tr>
+  <tr><td>Data storage</td><td>Local machine only — no cloud upload, no third-party services</td></tr>
+  <tr><td>API access scope</td><td>Single advertiser account (240-061-2384)</td></tr>
+</table>
+
+<h2>5. Supported Campaign Types</h2>
+<p>The tool reads data from all campaign types present in the account:</p>
+<ul>
+  <li>Search</li>
+  <li>Shopping</li>
+  <li>Performance Max</li>
+</ul>
+
+<h2>6. Summary</h2>
+<p>IlluminArt Ads Audit is a minimal, read-only internal tool designed solely to retrieve and display campaign performance data for the company's own single Google Ads account. It performs no write operations, does not manage third-party accounts, and is not distributed externally. Basic Access is requested to enable reporting on a production advertiser account.</p>
+
+</body>
+</html>

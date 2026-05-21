@@ -154,11 +154,12 @@ illuminart-ads/
 │   ├── current_report.md      # Aktualny raport
 │   └── history/               # Archiwum raportów
 │       └── YYYY-MM-DD.md
-├── skills/
-│   └── ads-analyst/
-│       └── SKILL.md           # Prompt eksperta analityki
-├── workflows/
-│   └── analiza-ads.md         # Orkiestracja workflow
+├── .agents/
+│   ├── skills/
+│   │   └── ads-analyst/
+│   │       └── SKILL.md       # Prompt eksperta analityki
+│   └── workflows/
+│       └── analiza-ads.md     # Orkiestracja workflow
 ├── config/
 │   ├── settings.yaml          # Konfiguracja (IDs, tokens)
 │   ├── credentials.json       # OAuth credentials (gitignored)

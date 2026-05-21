@@ -1,6 +1,5 @@
+# Secrets & config — NEVER commit
 config/settings.yaml
-
-# OAuth credentials — NEVER commit
 config/credentials.json
 config/token.json
 
