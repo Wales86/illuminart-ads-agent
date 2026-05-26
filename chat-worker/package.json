@@ -1,0 +1,10 @@
+{
+  "name": "illuminart-chat-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker proxy for IlluminArt Ads report chat widget",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
+  }
+}

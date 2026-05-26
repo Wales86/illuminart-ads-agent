@@ -8,6 +8,7 @@ Automatyczny agent do dwutygodniowego audytu kampanii Google Ads i analityki. Po
 - [Konfiguracja Google Cloud](#konfiguracja-google-cloud)
 - [Konfiguracja projektu](#konfiguracja-projektu)
 - [Uruchamianie](#uruchamianie)
+- [Chat Widget (AI Q&A)](#chat-widget-ai-qa)
 - [Struktura projektu](#struktura-projektu)
 
 ## Szybki start
@@ -138,6 +139,17 @@ python scripts/fetch_gsc.py --start 2026-05-06 --end 2026-05-20 --run-date 2026-
 # Dane zostaną zapisane w data/2026-05-20/
 ```
 
+## Chat Widget (AI Q&A)
+
+Na stronie raportu (GitHub Pages) jest pływający widget czatu, który pozwala wspólnikom zadawać pytania o raport w języku naturalnym. AI odpowiada na podstawie danych z raportu.
+
+**Jak to działa:**
+1. Widget na stronie wysyła pytanie do Cloudflare Worker (serverless proxy)
+2. Worker dorzuca treść raportu jako kontekst i pyta Gemini API
+3. Odpowiedź wraca do przeglądarki
+
+**Setup:** Zobacz szczegółową instrukcję w [`chat-worker/README.md`](chat-worker/README.md)
+
 ## Struktura projektu
 
 ```
@@ -148,6 +160,13 @@ illuminart-ads/
 │   ├── fetch_gsc.py           # Search Console API
 │   ├── utils.py               # Wspólne funkcje (auth, I/O)
 │   └── requirements.txt       # Zależności Python
+├── chat-worker/               # Cloudflare Worker — proxy do Gemini API
+│   ├── src/index.js           # Logika Worker
+│   ├── wrangler.toml          # Konfiguracja deploy
+│   └── README.md              # Instrukcja deploy
+├── docs/                      # Assety strony Pages
+│   ├── chat-widget.js         # Widget czatu (frontend)
+│   └── chat-widget.css        # Style widgetu
 ├── data/                      # Surowe dane JSON (gitignored)
 │   └── YYYY-MM-DD/            # Katalog per uruchomienie
 ├── reports/
@@ -174,3 +193,17 @@ illuminart-ads/
 - Katalog `data/` jest w `.gitignore` — surowe dane nie trafiają do repo
 - Developer Token jest w `settings.yaml` — rozważ przeniesienie do zmiennej środowiskowej w przyszłości
 - Skrypty używają OAuth2 z automatycznym odświeżaniem tokenu
+- Klucz Gemini API przechowywany jako secret w Cloudflare Worker (nie w kodzie)
+
+### 🔒 Hasło na stronę (TODO)
+
+Strona raportu na GitHub Pages jest obecnie **publiczna**. Planujemy dodać ochronę hasłem za pomocą [staticrypt](https://github.com/robinmoisson/staticrypt) — narzędzia, które szyfruje HTML za pomocą AES-256. Po wdrożeniu:
+
+- Każda strona będzie zaszyfrowana w pipeline CI (`deploy-pages.yml`)
+- Wspólnicy podają jedno wspólne hasło, które przeglądarka zapamiętuje na 30 dni
+- Bez hasła treść strony jest nieczytelna (prawdziwe szyfrowanie, nie JS overlay)
+
+```bash
+# Przykład integracji w workflow:
+npx staticrypt _site_build/index.html -p "haslo" --remember 30 --template-title "IlluminArt Raport"
+```

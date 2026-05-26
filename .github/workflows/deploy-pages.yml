@@ -34,6 +34,10 @@ jobs:
           mkdir -p _site/_layouts
           
           # Tworzymy główny szablon HTML (Jekyll layout)
+          # Kopiuj assety chat widgetu do _site
+          cp site/chat-widget.css _site/chat-widget.css
+          cp site/chat-widget.js _site/chat-widget.js
+          
           cat > _site/_layouts/default.html << 'LAYOUT'
           <!DOCTYPE html>
           <html lang="pl">
@@ -41,6 +45,7 @@ jobs:
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Raport Audytu Marketingowego</title>
+            <link rel="stylesheet" href="chat-widget.css">
             <style>
               body { 
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -71,7 +76,10 @@ jobs:
             <a href="index.html">Aktualny raport</a>
             <a href="history.html">Historia</a>
           </div>
+          <div id="report-content">
           {{ content }}
+          </div>
+          <script src="chat-widget.js"></script>
           </body>
           </html>
           LAYOUT
@@ -109,6 +117,23 @@ jobs:
               echo "<a class='report-link' href='report-${basename}.html'>📊 Raport z ${basename}</a><br>" >> _site/history.md
             done
           fi
+          
+          # Generuj report-history.json z ostatnimi 2 raportami historycznymi
+          # Widget czatu pobiera ten plik, żeby AI miał kontekst porównawczy
+          echo '[' > _site/report-history.json
+          HIST_COUNT=0
+          if [ -d "reports/history" ]; then
+            for report in $(ls -r reports/history/*.md 2>/dev/null); do
+              if [ "$HIST_COUNT" -ge 2 ]; then break; fi
+              if [ "$HIST_COUNT" -gt 0 ]; then echo ',' >> _site/report-history.json; fi
+              # Escape JSON: backslash, quotes, newlines, tabs
+              REPORT_TEXT=$(cat "$report" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/\\t/g' | awk '{printf "%s\\n", $0}' | sed 's/\\n$//')
+              REPORT_DATE=$(basename "$report" .md)
+              printf '{"date":"%s","content":"%s"}' "$REPORT_DATE" "$REPORT_TEXT" >> _site/report-history.json
+              HIST_COUNT=$((HIST_COUNT + 1))
+            done
+          fi
+          echo ']' >> _site/report-history.json
           
           # Użyj Jekyll do renderowania Markdown
           # Dodaj _config.yml

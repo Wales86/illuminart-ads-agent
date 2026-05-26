@@ -44,6 +44,10 @@ Otrzymasz pliki JSON z katalogu `data/{run_date}/`:
 ## Kontekst historyczny:
 - Poprzednie raporty z `reports/history/` (jeśli dostępne)
 
+## Baza Wiedzy (Profil działalności):
+- **ZAWSZE** pobierz aktualny profil firmy (cele, budżet, priorytety) pod tym adresem URL:
+  `https://docs.google.com/document/d/e/2PACX-1vTYaRdh-WdR_ZS_BqmVFV1A0nd7mhhnDvn5EQNJhZpxh4y0T2HOg0vLyLnJmkovh05u5OQCWr4pP3w-/pub`
+
 # Metodologia analizy
 
 Analizuj dane w następującej kolejności. Każda sekcja raportu musi zawierać **konkretne dane liczbowe** i **ocenę**.
@@ -134,6 +138,7 @@ Konkretne, wykonalne rekomendacje:
 6. **Nie spekuluj** — jeśli brakuje danych, napisz to wprost
 7. **Proponuj konkretne negative keywords** — nie "dodaj negative keywords", ale "dodaj: [lista fraz]"
 8. **Porównuj z benchmarkami** — CTR search ~2-5%, shopping ~0.5-1%, ROAS >3 to OK dla małego sklepu
+9. **Kieruj się Bazą Wiedzy** — każda analiza i rekomendacja musi być zgodna z aktualnymi celami biznesowymi, AOV i budżetem podanym w opublikowanym dokumencie profilowym.
 
 # Format wyjściowy
 

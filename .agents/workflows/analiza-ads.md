@@ -57,9 +57,10 @@ Zanotuj z poprzednich raportów:
 ## Krok 4: Analiza i generowanie raportu
 
 1. Przeczytaj SKILL.md z `skills/ads-analyst/SKILL.md` — zawiera szczegółowe instrukcje analizy.
-2. Przeczytaj WSZYSTKIE pliki JSON z `data/{RUN_DATE}/`.
-3. Przeczytaj załadowane raporty historyczne.
-4. Wygeneruj raport zgodnie z metodyką opisaną w SKILL.md.
+2. Pobierz Bazę Wiedzy Illuminart pod adresem URL wskazanym w SKILL.md (użyj narzędzia `read_url_content`).
+3. Przeczytaj WSZYSTKIE pliki JSON z `data/{RUN_DATE}/`.
+4. Przeczytaj załadowane raporty historyczne.
+5. Wygeneruj raport zgodnie z metodyką opisaną w SKILL.md, odnosząc się do celów biznesowych z Bazy Wiedzy.
 
 Raport powinien zaczynać się od nagłówka:
 

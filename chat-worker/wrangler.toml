@@ -1,0 +1,19 @@
+# =============================================================================
+# Cloudflare Worker — Chat Proxy for IlluminArt Ads Report
+# =============================================================================
+# Deploy:  npx wrangler deploy
+# Dev:     npx wrangler dev
+#
+# Required secrets (set via `npx wrangler secret put`):
+#   GEMINI_API_KEY    — Google AI Studio API key
+#   CHAT_PASSWORD     — Shared password for widget access (optional)
+# =============================================================================
+
+name = "illuminart-chat"
+main = "src/index.js"
+compatibility_date = "2025-12-01"
+
+[vars]
+# Public config — NOT secrets
+ALLOWED_ORIGIN = "https://wales86.github.io"
+MODEL_NAME = "gemini-2.0-flash"
