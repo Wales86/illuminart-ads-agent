@@ -147,3 +147,7 @@ illuminart-ads/
 - [`wiki/gcp-setup.md`](wiki/gcp-setup.md) — Krok-po-kroku konfiguracja Google Cloud, OAuth2, Developer Token
 - [`wiki/chat-widget.md`](wiki/chat-widget.md) — Dokumentacja chat widgetu i TODO: password protection
 - [`chat-worker/README.md`](chat-worker/README.md) — Instrukcja deploy Cloudflare Worker
+
+
+## github pages url
+https://wales86.github.io/illuminart-ads-agent/index.html
