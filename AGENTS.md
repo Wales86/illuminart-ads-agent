@@ -51,6 +51,7 @@ python scripts/fetch_gsc.py --start 2026-05-06 --end 2026-05-20 --run-date 2026-
             ├─► scripts/fetch_ga4.py
             ├─► scripts/fetch_ads.py
             ├─► scripts/fetch_gsc.py
+            ├─► scripts/fetch_shopware.py
             │       └─► data/YYYY-MM-DD/*.json   ← surowe dane
             ├─► reports/history/*.md              ← kontekst historyczny
             └─► .agents/skills/ads-analyst/SKILL.md  ← ekspert analizy
@@ -69,10 +70,11 @@ illuminart-ads/
 │   ├── fetch_ga4.py                   # GA4: ruch, źródła, konwersje, top strony
 │   ├── fetch_ads.py                   # Ads: kampanie, keywords, search terms, change history
 │   ├── fetch_gsc.py                   # GSC: zapytania, strony, trend dzienny
+│   ├── fetch_shopware.py              # Shopware 6: rzeczywiste zamówienia, przychód i AOV
 │   ├── utils.py                       # OAuth2 auth, settings, CLI args, JSON I/O
 │   └── requirements.txt               # Zależności Python
 ├── config/
-│   ├── settings.yaml                  # IDs i tokeny (wypełnia user)
+│   ├── settings.yaml                  # IDs, tokeny i Shopware API (wypełnia user)
 │   ├── credentials.json               # OAuth credentials (gitignored)
 │   └── token.json                     # OAuth token (gitignored, auto-refresh)
 ├── data/
@@ -86,7 +88,8 @@ illuminart-ads/
 │       ├── ads_search_terms.json
 │       ├── ads_changes.json
 │       ├── gsc_queries.json
-│       └── gsc_pages.json
+│       ├── gsc_pages.json
+│       └── shopware_orders.json
 ├── reports/
 │   ├── current_report.md              # Aktualny raport (też GitHub Pages)
 │   └── history/                       # Archiwum — ostatnie 3 ładowane do kontekstu

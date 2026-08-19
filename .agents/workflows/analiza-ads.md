@@ -39,6 +39,9 @@ python scripts/fetch_ads.py --start {START_DATE} --end {END_DATE} --run-date {RU
 
 # 3. Google Search Console
 python scripts/fetch_gsc.py --start {START_DATE} --end {END_DATE} --run-date {RUN_DATE}
+
+# 4. Shopware 6 (rzeczywiste zamówienia i przychód ze sklepu)
+python scripts/fetch_shopware.py --start {START_DATE} --end {END_DATE} --run-date {RUN_DATE}
 ```
 
 Po każdym skrypcie sprawdź czy zakończył się sukcesem (exit code 0).
