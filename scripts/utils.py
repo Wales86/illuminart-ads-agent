@@ -92,10 +92,17 @@ def get_oauth_credentials():
 
     # Jeśli brak ważnych credentials — odśwież lub autoryzuj od nowa
     if not creds or not creds.valid:
+        refreshed = False
         if creds and creds.expired and creds.refresh_token:
             print("Odświeżanie tokenu OAuth2...")
-            creds.refresh(Request())
-        else:
+            try:
+                creds.refresh(Request())
+                refreshed = True
+            except Exception as e:
+                print(f"Błąd odświeżania tokenu ({e}), wymagana ponowna autoryzacja...")
+                creds = None
+
+        if not refreshed:
             print("Wymagana autoryzacja OAuth2 — otwieram przeglądarkę...")
             flow = InstalledAppFlow.from_client_secrets_file(
                 str(credentials_path), SCOPES
