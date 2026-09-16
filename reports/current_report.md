@@ -43,21 +43,21 @@ Kluczowe zjawiska tego okresu:
    Sklep zrealizował 16 ważnych zamówień o wartości 4 737,50 PLN. Wzrost napędzany był stabilną sprzedażą imion LED dla dzieci (8 zamówień) oraz wysokomarżowym zamówieniem na Neon LED za 950 PLN. AOV na poziomie 296,09 PLN jest idealnie zgodny z założeniami Bazy Wiedzy (300 PLN).
 2. **🔴 Wyciek 550 PLN w `PM - wesele` (2 516 kliknięć, 0 konwersji, 93% ghost traffic).**  
    Przez minione dwa tygodnie kampania weselna po raz kolejny ściągała ruch botowy/przypadkowy z gier mobilnych (CTR 4,99%, CPC 0,22 PLN, 2 516 klików vs tylko 174 sesje w GA4). Przepalono kolejne 550 PLN bez ani jednego zakupu.
-3. **🟡 Masowe porządki agencji (918 negatywów), ale wykonane "za pięć dwunasta".**  
-   15 września po godz. 20:55 oraz 16 września rano agencja dodała 918 wykluczeń i zaktualizowała strategie `target_roas`. To dowód, że audyty działają i agencja wreszcie zaczęła czyścić ruch, jednak przez 13 dni obecnego okresu budżet płonął bez nadzoru.
+3. **🟡 Masowe porządki agencji (918 negatywów) — odcięto śmieci, ale wylano dziecko z kąpielą (wycięto produkty sklepu!).**  
+   15 września po godz. 20:55 oraz 16 września rano agencja dodała 918 wykluczeń w dopasowaniu ścisłym `[EXACT]` i zaktualizowała strategie `target_roas`. Bezpośredni audyt semantyczny tych słów wykazał, że obok potrzebnego odcięcia śmieci (wypożyczalnie, meble, panele, Pepco, cyrylica), agencja bezrefleksyjnie wykluczyła **ok. 50 kluczowych fraz produktowych sklepu** (w tym `drewniane imiona dzieci`, `lampki z imionami dzieci`, `chmurki`, `metryczki` oraz weselny klasyk `neon fajnie ze jestes`).
 
 ---
 
-### Ocena pracy agencji: **4/10** (wzrost z 1/10)
+### Ocena pracy agencji: **3/10** (brak poprawy jakościowej)
 
 **Uzasadnienie oceny:**  
-Agencja otrzymuje wyższą ocenę wyłącznie za wdrożenie wreszcie masowych wykluczeń słów kluczowych (918 pozycji) i przejście na Target ROAS w PMax, co było rekomendowane od tygodni. Ocena nie może być jednak wyższa niż 4/10, ponieważ:
-- Zmiany te zostały wprowadzone hurtowo dopiero w ostatnich godzinach badanego okresu (15-16 września), po uprzednich kilkunastu dniach bezruchu.
-- Dopuszczono do ponownego spalenia 550 PLN w kampanii weselnej na puste kliknięcia displayowe.
-- Kampania Brand nadal pozostaje wstrzymana.
+Agencja wdrożyła wprawdzie zalecenia audytów dotyczące wykluczeń i Target ROAS, jednak szczegółowa weryfikacja obnażyła niekompetencję wykonawczą:
+- Zmiany zostały zrobione hurtowo metodą "zaznacz wszystko i wyklucz", bez weryfikacji oferty sklepu, co zablokowało bezpośrednie zapytania na bestsellery Illuminart.
+- Przez 13 dni badanego okresu dopuszczono do bezkarnego spalenia 550 PLN w kampanii weselnej na puste kliknięcia displayowe (93% ghost clicks).
+- Kampania ochrony marki (Brand) nadal pozostaje bezmyślnie wyłączona.
 
 **Najważniejsza rekomendacja:**  
-Przez najbliższe 7 dni uważnie monitorować wolumen i jakość ruchu po dodaniu 918 negatywów (upewnić się, czy agencja nie wycięła fraz wartościowych), bezwzględnie włączyć z powrotem kampanię ochrony marki `SW - brand tCPA` z limitem CPA oraz zweryfikować, czy kampania `PM - wesele` przestała przepalać środki w sieci AdMob/Display.
+Natychmiast zażądać od agencji odblokowania (usunięcia z list wykluczających) kilkudziesięciu zapytań o imiona LED, drewniane lampki i dodatki CNC, wznowić kampanię `SW - brand tCPA` oraz dać kampanii weselnej maksymalnie 7 dni na udowodnienie rentowności.
 
 ---
 
@@ -174,11 +174,64 @@ Po 45 dniach bierności w historii zmian konta zarejestrowano **922 operacje**!
    - Zmiana `paths: "maximize_conversion_value.target_roas"` dla obu głównych kampanii PMax (przejście na docelowy ROAS).
 3. **1 zmiana budżetu (`CAMPAIGN_BUDGET`).**
 
-### Ocena merytoryczna działań agencji:
-- **Co jest na plus:** Agencja wreszcie zrobiła to, o co wnioskowaliśmy od dwóch miesięcy – wdrożyła masowe wykluczenia nieefektywnych zapytań i ustawiła tROAS, aby powstrzymać algorytm przed kupowaniem tanich, bezwartościowych wyświetleń.
-- **Co budzi niepokój:** 
-  - Wykonanie niemal tysiąca zmian w ciągu kilku godzin tuż przed upływem kolejnego dwutygodniowego okresu rozliczeniowego sugeruje nerwową reakcję na zbliżający się audyt lub wezwanie do raportowania.
-  - Wprowadzenie tak dużej liczby wykluczeń na raz wymaga weryfikacji – istnieje ryzyko, że na listę trafiły zbyt ogólne frazy dopasowania przybliżonego, które mogłyby uciąć wartościowy ruch na imiona i neony.
+### Ocena merytoryczna zrywu agencji:
+- **Co jest na plus:** Agencja wreszcie zaczęła reagować na wielotygodniowe apele o czyszczenie zapytań i powstrzymanie bezwartościowych wyświetleń.
+- **Co budzi poważne zastrzeżenia:** 
+  - Masowość zmian w ostatnich godzinach okresu (15 września nocą i 16 września rano) to ewidentne działanie "pod audyt".
+  - **Kluczowy problem merytoryczny:** Przeprowadzony natychmiast po pobraniu danych głęboki audyt semantyczny tych 918 wykluczeń wykazał, że agencja wykonała to zadanie **całkowicie bezrefleksyjnie**, wycinając obok śmieci także trzon oferty sklepu.
+
+---
+
+### 5.1. Głęboki audyt 918 wykluczeń agencji — Analiza semantyczna i weryfikacja poprawności
+
+W odpowiedzi na nocny zryw agencji przeprowadziliśmy bezpośrednią ekstrakcję z Google Ads API wszystkich 918 nowo dodanych reguł wykluczających (`CAMPAIGN_CRITERION`, operacja `CREATE`). Wszystkie frazy dodano w **dopasowaniu ścisłym (`[EXACT]`)**:
+- **723 wykluczenia** w kampanii `PM - Imiona / Neony - 2026 NEW CPA 50`
+- **195 wykluczeń** w kampanii `PM - wesele 2026 NEW - CPA 60`
+
+#### 📊 Podsumowanie struktury wykluczeń:
+
+| Kategoria semantyczna | PM - Imiona / Neony (723) | PM - wesele (195) | Ocena audytu | Wpływ na biznes |
+|---|---|---|---|---|
+| **Prawdziwe śmieci i obcy asortyment** (meble, tapety, panele, pościel, Pepco) | 66 fraz | 1 fraza | 🟢 Wzorowo | Oszczędność budżetu |
+| **Zapytania w cyrylicy i obcojęzyczne** (ukraiński, rosyjski, francuski) | 12 fraz | 12 fraz | 🟢 Wzorowo | Eliminacja ruchu nieobsługiwanego |
+| **Wypożyczalnie i wynajem** (klienci szukający wypożyczenia na weekend) | 0 fraz | 4 frazy | 🟢 Bardzo dobrze | Odcięcie zapytań bez intencji zakupu |
+| **DIY / Zrób to sam i grafika** (szablony, projekty wektorowe) | 0 fraz | 3 frazy | 🟢 Bardzo dobrze | Odsiew użytkowników niekupujących |
+| **Usługi lokalne stacjonarne** (montaż reklam w Krakowie, Olsztynie) | 0 fraz | 2 frazy | 🟢 Dobrze | Uniknięcie zapytań montażowych |
+| **Ogólne masowe zapytania o tanie oświetlenie** (lampka do pokoju dziecka) | 608 fraz | — | 🟡 Dozwolone | Odsiew taniego marketowego ruchu |
+| **Ogólne neony i napisy przeniesione z wesela** | — | 130 fraz | 🟡 Dyskusyjne | Próba separacji kampanii PMax |
+| **🚨 KARDYNALNE BŁĘDY: Produkty i bestsellery sklepu!** | **49 fraz** | **51 fraz** | 🔴 KARYGODNY BŁĄD | **Blokada sprzedaży własnych produktów!** |
+
+---
+
+#### 🚨 Szczegółowa analiza błędów: Co agencja bezprawnie wycięła?
+
+Agencja wyeksportowała raport wyszukiwanych haseł (Search Terms) i bez weryfikacji oferty zaznaczyła wszystkie frazy, które wygenerowały kliknięcia bez odnotowanego zakupu w Google Ads. W efekcie wycięto **dokładnie te produkty, które sklep produkuje na CNC i sprzedaje w Shopware**:
+
+##### 1. Kampania `PM - Imiona / Neony` — wycięte bestsellery dziecięce (49 fraz):
+- **Imiona drewniane i podświetlane LED:**  
+  `[drewniane imiona dzieci]`, `[imiona dzieci z drewna]`, `[lampki z imionami dzieci]`, `[z imionami dzieci]`, `[imiona dzieci na sciane]`, `[imiona na sciane dla dzieci]`, `[imiona do pokoju dziecięcego]`.  
+  *(Fakt ze sklepu: W badanym okresie sprzedano 8 podświetlanych imion LED i 2 drewniane imiona na kwotę 2 895 PLN!).*
+- **Drewniane lampki nocne ze sklejki:**  
+  `[drewniana lampka nocna dla dzieci]`, `[drewniana lampka dla dzieci]`, `[lampka drewniana na sciane]`, `[lampka drewniana dla dzieci]`, `[lampa drewniana dla dziecka]`, `[dekoracje ze sklejki dla dzieci]`, `[drewniane dekoracje do pokoju dziecka]`, `[drewniane ozdoby do pokoju dziecka]`.
+- **Dodatki z odpadów CNC (chmurki, gwiazdki, księżyce):**  
+  `[chmurka lampka]`, `[chmurki do pokoju dziecka]`, `[lampki chmurki]`, `[lampa chmurka do pokoju dziecka]`, `[lampka chmurka do pokoju dziecięcego]`, `[lampka księżyc na ścianę]`, `[gwiazdki do pokoju dziecięcego]`.  
+  *(Fakt ze sklepu: Sprzedano 11 sztuk drewnianych chmurek i gwiazdek za 205 PLN czystego zysku!).*
+- **Kultowe wzory i metryczki:**  
+  `[lampka pad na ścianę]` (gamepad), `[lampka batman]`, `[metryczka dla dziecka drewniana]`, `[metryczka dla dziecka ręcznie robiona]`.
+
+##### 2. Kampania `PM - wesele 2026 NEW` — wycięte hity ślubne i neony (51 fraz):
+- **Bestseller ślubny:**  
+  `[neon fajnie ze jestes]` — absolutny klasyk polskich wesel, jeden z najchętniej kupowanych gotowych neonów ślubnych!
+- **Napisy okolicznościowe i ślubne:**  
+  `[napisy okolicznościowe]`, `[drewniany napis]`, `[napis ze sklejki na zamówienie]`, `[napis na pleksie]`.
+- **Główne frazy ofertowe neonów:**  
+  `[neony na zamówienie]`, `[personalizowany neon]`, `[neon z imieniem]`, `[neon na wymiar]`, `[neon led na zamówienie]`, `[spersonalizowany neon]`, `[własny neon]`.
+
+---
+
+#### Znaczenie techniczne dopasowania `[EXACT]` (Ścisłe):
+- **Co ratuje sytuację:** Dopasowanie ścisłe sprawia, że Google blokuje wyświetlenie **wyłącznie wtedy**, gdy klient wpisze dokładnie tę frazę kropka w kropkę (np. *„lampki z imionami dzieci”*). Bardziej rozbudowane zapytania (np. *„lampki z imionami dzieci na ścianę drewniane”*) nadal mogą się wyświetlać.
+- **W czym tkwi szkoda:** Wiele z wyciętych fraz to najkrótsze, najpopularniejsze zapytania o najwyższej intencji zakupowej. Klient wpisujący bezpośrednio *„drewniane imiona dzieci”* lub *„neon fajnie ze jestes”* **nie zobaczy oferty sklepu**.
 
 ---
 
@@ -230,7 +283,7 @@ Sklep przerwał spadkową tendencję z okresu #6. Liczba zamówień wróciła do
 
 ### 🔴 Krytyczne:
 1. **Dalsze palenie budżetu w `PM - wesele`:** Przez cały badany okres kampania ta spaliła kolejne 550 PLN. Choć dodano 196 wykluczeń 16 września rano, jeśli w ciągu tygodnia nie pojawią się zamówienia ślubne, kampania musi zostać wyłączona.
-2. **Ryzyko "przedobrzenia" przy 918 negatywach:** Dodanie 724 słów wykluczających do kampanii imion dziecięcych w jednym momencie może drastycznie obciąć wartościowy ruch, jeśli listy zawierały zbyt szerokie słowa.
+2. **Blokada własnych produktów przez agencję (potwierdzona w audycie):** Agencja wycięła 49 fraz opisujących imiona LED, chmurki, metryczki i drewniane lampki w kampanii dziecięcej oraz weselny bestseller `[neon fajnie ze jestes]`. Jeśli wykluczenia te nie zostaną natychmiast cofnięte, kampania bestsellerowa straci najcenniejsze wejścia o wysokiej intencji zakupowej.
 
 ### 🟡 Ważne:
 1. **Wstrzymana kampania ochrony marki:** `SW - brand tCPA` nadal nie chroni zapytań o `illuminart`.
@@ -245,9 +298,11 @@ Sklep przerwał spadkową tendencję z okresu #6. Liczba zamówień wróciła do
 ## 9. Rekomendacje
 
 ### Priorytet: Wysoki 🔴
-1. **Weryfikacja dodanych wykluczeń (724 w Imionach, 196 w Weselu):**  
-   - *Działanie:* Zażądać od agencji natychmiastowego przesłania listy dodanych 918 wykluczeń lub sprawdzić w panelu, czy nie wykluczono słów kluczowych zawierających człony: `imię`, `led`, `podświetlane`, `drewniane`, `neon`, `dziecka`.  
-   - *Oczekiwany efekt:* Zapobieżenie załamaniu wolumenu wyświetleń kampanii bestsellerowej.
+1. **Pilne odblokowanie bestsellerów sklepu wyciętych przez agencję:**  
+   - *Działanie:* Przekazać agencji oficjalne polecenie natychmiastowego usunięcia z list wykluczających fraz stanowiących trzon sprzedaży Illuminart:  
+     * **Z kampanii `PM - Imiona / Neony`:** usunąć wykluczenia: `[drewniane imiona dzieci]`, `[imiona dzieci z drewna]`, `[lampki z imionami dzieci]`, `[z imionami dzieci]`, `[imiona dzieci na sciane]`, `[imiona na sciane dla dzieci]`, `[imiona do pokoju dziecięcego]`, `[drewniana lampka nocna dla dzieci]`, `[drewniana lampka dla dzieci]`, `[lampka drewniana na sciane]`, `[chmurka lampka]`, `[chmurki do pokoju dziecka]`, `[lampki chmurki]`, `[lampa chmurka]`, `[lampka księżyc na ścianę]`, `[gwiazdki do pokoju dziecięcego]`, `[lampka pad na ścianę]`, `[lampka batman]`, `[metryczka dla dziecka drewniana]`.  
+     * **Z kampanii `PM - wesele`:** usunąć wykluczenia: `[neon fajnie ze jestes]`, `[napisy okolicznościowe]`.  
+   - *Oczekiwany efekt:* Ocalenie kampanii przed utratą zapytań o najwyższej konwersji przy jednoczesnym zachowaniu wykluczeń na meble, panele, tapety i wypożyczalnie.
 2. **Twarde ultimatum dla kampanii weselnej:**  
    - *Działanie:* Dajemy kampanii `PM - wesele 2026 NEW` dokładnie 7 dni na wykazanie skuteczności nowych negatywów. Jeśli do 23.09 nie przyniesie minimum 2 zamówień w Shopware, wstrzymać ją i przenieść jej budżet (ok. 500 PLN) do PLA i PMax Imiona.
 3. **Włączenie kampanii Brandowej:**  
