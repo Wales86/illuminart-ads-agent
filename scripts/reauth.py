@@ -4,6 +4,7 @@ Wyświetla URL do skopiowania w przeglądarkę, a następnie czeka
 na wklejenie kodu autoryzacyjnego.
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -19,6 +20,15 @@ CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Re-autoryzacja OAuth2")
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=0,
+        help="Port serwera autoryzacji (domyślnie 0 = automatyczny wolny port)",
+    )
+    args = parser.parse_args()
+
     credentials_path = CONFIG_DIR / "credentials.json"
     token_path = CONFIG_DIR / "token.json"
 
@@ -26,8 +36,8 @@ def main():
         str(credentials_path), SCOPES
     )
 
-    # Console flow — drukuje URL, czeka na wklejenie kodu
-    creds = flow.run_local_server(port=8085, open_browser=False)
+    # Local server flow — drukuje URL, nasłuchuje na wolnym porcie
+    creds = flow.run_local_server(port=args.port, open_browser=False)
 
     with open(token_path, "w", encoding="utf-8") as f:
         f.write(creds.to_json())
