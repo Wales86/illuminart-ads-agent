@@ -1,301 +1,355 @@
 # Raport audytu marketingowego
 
-📅 Okres: 2026-09-17 — 2026-10-02  
-📊 Data raportu: 2026-10-02  
-🔁 Typ: Raport #8 (porównanie z raportami 2026-09-16, 2026-09-03 i 2026-08-19)  
+📅 Okres: 2026-10-03 — 2026-10-15  
+📊 Data raportu: 2026-10-15 (Aktualizacja z pełną diagnozą historyczną)  
+🔁 Typ: Raport #9 (porównanie z raportami 2026-10-02, 2026-09-16 i 2026-09-03 oraz pełną historią od 28.04.2026)  
 🔌 Źródła danych: **Google Ads API + GA4 API + Google Search Console API + Shopware 6 Admin API (Pełna integracja automatyczna)**
 
 ---
 
 ## 1. Podsumowanie wykonawcze (Executive Summary)
 
-### Ogólna ocena okresu: 🟢 Przełomowa rentowność — rekordowy ROAS sklepu 8,26 (826%), stłumienie wycieku budżetu i 19 zamówień w Shopware
+### Ogólna ocena okresu: 🟡 Utrzymana rentowność bieżąca (ROAS Google Ads vs sklep 3,07), ale wyraźny spadek skali po rekordowym wrześniu i wygaśnięcie sezonu weselnego
 
-W badanym 16-dniowym okresie (17.09 – 02.10.2026) sklep Illuminart zanotował **najwyższą rentowność operacyjną w historii audytów**. W systemie Shopware 6 zarejestrowano **19 ważnych zamówień na łączną kwotę 6 895,00 PLN brutto** (3 zamówienia zostały anulowane, AOV wzrósł do 362,89 PLN). 
+W badanym 13-dniowym okresie (03.10 – 15.10.2026) sklep Illuminart zanotował **1 877,00 PLN przychodu brutto** z **6 ważnych zamówień** w systemie Shopware 6 (0 zamówień anulowanych, AOV wyniósł bardzo stabilne **312,83 PLN**, wprost wpisując się w założenia Bazy Wiedzy: ~300 PLN). 
 
-Przy wydatkach reklamowych Google Ads obniżonych do **834,31 PLN** (spadek o niemal 40% dzięki uszczelnieniu budżetu), **rzeczywisty ROAS sklepu wyniósł aż 8,26 (826%)**. Oznacza to, że Illuminart po raz pierwszy osiągnął i przekroczył ambitny cel marketingowy zdefiniowany w Bazie Wiedzy (minimum 700% ROAS). Koszt pozyskania 1 zł obrotu spadł do rewelacyjnego poziomu **0,12 PLN** (wobec dopuszczalnego maksimum 0,33 PLN).
+Wydatki w Google Ads wyniosły **612,07 PLN** (spadek o 26,6% względem poprzedniego okresu). Rzeczywisty stosunek przychodu ze sklepu do kosztu Google Ads wyniósł **3,07 (307%)**, utrzymując się na granicy progu rentowności operacyjnej zdefiniowanego w Bazie Wiedzy (próg 300% ROAS, koszt pozyskania obrotu 0,326 PLN na 1 PLN przychodu, wobec dopuszczalnego limitu 0,33 PLN). Należy jednak pamiętać, że w okresie tym działały również płatne reklamy Meta (Facebook/Instagram), dlatego łączny *blended ROAS* sklepu uwzględniający wszystkie wydatki marketingowe jest niższy.
 
-Kluczowe zjawiska tego okresu:
-1. **Skuteczne zdławienie wycieku budżetu w `PM - wesele` (-87% kosztów):** Wdrożone pod koniec poprzedniego okresu wykluczenia i strategia `target_roas` wreszcie zadziałały. Koszt kampanii weselnej spadł z katastrofalnych 550,04 PLN do zaledwie **71,28 PLN**, a liczba fałszywych kliknięć displayowych z gier zredukowała się z 2 516 do zaledwie 65. Odcięcie tego balastu uratowało niemal 480 PLN zysku w 16 dni.
-2. **Szybka korekta agencji po audycie #7 (odblokowanie 24 wykluczeń 17.09):** Bezpośrednio po publikacji poprzedniego raportu, 17 września o godz. 09:16, agencja usunęła 24 błędnie dodane wykluczenia z kampanii `PM - Imiona / Neony`. Przywrócenie wyświetlania kluczowych fraz produktowych zaowocowało natychmiastowym odbiciem efektywności kampanii: ROAS w panelu Ads wzrósł do **2,92 (292%)**, generując 1 701 PLN zaraportowanej wartości przy 581,77 PLN kosztu.
-3. **Absolutny rekord bestsellerów (19 podświetlanych imion LED):** Sprzedaż napędzana była podświetlanymi imionami LED dla dzieci — aż 19 sztuk wygenerowało **5 580,00 PLN** (80,9% całego obrotu sklepu). Dodatkowo sprzedano wysokomarżowy Neon LED "Miłość" za **650,00 PLN** (50% marży) oraz dodatki z odpadów CNC za **290,00 PLN** (czysty zysk materiałowy).
-4. **Wsparcie akcji targowej "World of Kids EXPO":** W dniach 30.09 – 02.10 w sklepie zrealizowano 4 zamówienia z dedykowanym kodem rabatowym z targów (rabat od 55 do 118 PLN), co potwierdza synergię działań offline z e-commerce.
-5. **Agencja ponownie zapadła w letarg (15 dni bezruchu):** Po odblokowaniu wykluczeń rano 17 września agencja nie wykonała **ani jednej zmiany** przez kolejne 15 dni okresu. Kampania brandowa `SW - brand tCPA` nadal pozostaje bezmyślnie wyłączona (PAUSED).
+Dogłębna analiza pełnej historii zamówień i lejka GA4 ujawnia, że spadek obrotu w pierwszej połowie października **nie wynika z nagłego załamania popytu na podświetlane imiona dziecięce**, lecz z nałożenia się trzech czynników rynkowych i operacyjnych:
+
+1. **Definitywny koniec sezonu weselnego (główna przyczyna ubytku przychodu):** W lipcu i sierpniu neony oraz napisy weselne generowały **6 000 – 9 000 PLN miesięcznie** (blisko 50% całego obrotu firmy). W październiku kategoria ta przyniosła zaledwie 550 PLN. Imiona LED — mimo stabilnego popytu — ze względu na niższą cenę jednostkową (~300 zł vs 550–950 zł za neon) nie były w stanie zrekompensować tego ubytku bez drastycznego zwiększenia wolumenu.
+2. **Efekt bazy po rekordowym wrześniu:** Wrzesień (34 zamówienia, 11 632 zł) był sztucznie podbity dwoma jednorazowymi boosterami: targami *World of Kids EXPO* (4 zamówienia z kodem targowym) oraz intensywną kampanią Meta (175–284 sesji tygodniowo z FB/IG). Październikowe tempo sprzedaży imion LED (~12 szt./mies.) wraca do stabilnej normy z lipca i sierpnia (12–14 szt./mies.).
+3. **Zbieg spadków płatnego ruchu ze wszystkich źródeł:** 
+   - Ruch z Meta (FB/IG) załamał się ze 134 sesji w tygodniu 41 do zaledwie 3 sesji w tygodniu 42 (wyłączenie kampanii lub wyczerpanie budżetu ok. 11–12 października).
+   - Google Ads w kampanii imion obniżyło wydatki z ~350 zł/tydz. latem do 200–290 zł/tydz. w ostatnich tygodniach.
+   - Wejścia bezpośrednie (Direct) stopniały ze 100–150 sesji tygodniowo latem do 35 sesji w tyg. 41.
+4. **Popyt na imiona LED nie zniknął — problem leży w przecieku koszyka:** Karta produktowa imion LED miała w październiku 240–300 odsłon i ok. 17 dodań do koszyka tygodniowo (tyle samo co w rekordowym wrześniu!). Klienci nadal konfigurują imiona, lecz drastycznie spadł współczynnik przejścia z koszyka do płatności.
+5. **Agencja Google Ads w trybie pasywnym przed kluczowym Q4:** 1 zmiana w ciągu 13 dni (dostrojenie kampanii weselnej zamiast przygotowań świątecznych dla imion) oraz zignorowanie wstrzymanej kampanii brandowej świadczą o braku proaktywności ze strony opiekuna konta.
 
 ---
 
 ### Kluczowe metryki w porównaniu z poprzednimi audytami
 
-| Metryka kluczowa | Obecny okres (#8, 16 dni) | Poprzedni okres (#7, 14 dni) | Okres #6 (14 dni) | Okres #5 (21 dni) | Zmiana vs #7 |
+| Metryka kluczowa | Obecny okres (#9, 13 dni) | Poprzedni okres (#8, 16 dni) | Okres #7 (14 dni) | Okres #6 (14 dni) | Zmiana vs #8 |
 |---|---|---|---|---|---|
-| Łączny koszt Google Ads | 834,31 PLN | 1 384,71 PLN | 1 347,26 PLN | 2 163,39 PLN | 🟢 -39,8% (uszczelnienie budżetu) |
-| Przychód ze sklepu (Shopware 6) | 6 895,00 PLN (19 zam.) | 4 737,50 PLN (16 zam.) | 3 816,00 PLN (9 zam.) | 7 166,00 PLN (16 zam.) | 🟢 +45,5% (+18,8% zam.) |
-| Realny ROAS sklepu (Shopware) | 8,26 (826%) | 3,42 (342%) | 2,83 (283%) | 3,31 (331%) | 🟢 +141,5% (cel strategiczny 700% zrealizowany) |
-| Koszt na 1 zł przychodu (Shopware) | 0,12 PLN | 0,29 PLN | 0,35 PLN | 0,30 PLN | 🟢 -58,6% (maksymalna rentowność) |
-| Średnia wartość zamówienia (AOV) | 362,89 PLN | 296,09 PLN | 424,00 PLN | 447,88 PLN | 🟢 +22,6% (powyżej założeń: ~300 zł) |
-| Wartość konwersji (Google Ads) | 1 701,00 PLN | 1 596,39 PLN | 674,00 PLN | 4 243,89 PLN | 🟢 +6,6% |
-| ROAS Google Ads (raportowany) | 2,04 (204%) | 1,15 (115%) | 0,50 (50%) | 1,96 (196%) | 🟢 +77,4% (podwojenie efektywności) |
-| Przychód w GA4 z Google Ads (cpc) | 1 626,00 PLN | 2 089,99 PLN | 644,00 PLN | 2 127,00 PLN | 🟡 -22,2% (przesunięcie do organic/direct) |
-| Przychód łączny w GA4 | 7 687,00 PLN | brak danych | 2 253,00 PLN | 5 339,00 PLN | 🟢 Bardzo wysoka rejestracja transakcji |
-| Sesje łącznie (GA4) | 1 029 | 1 484 | 1 354 | 901 | 🟢 -30,7% (eliminacja pustych wejść) |
-| Engagement Rate (GA4) | 61,5% | ok. 45% | ok. 40% | — | 🟢 +36,7% (drastyczny skok jakości ruchu) |
-| Ruch organiczny GSC (kliknięcia) | 61 | 53 | 47 | 43 | 🟢 +15,1% (rekordowy ruch SEO) |
-| Aktywność agencji (liczba zmian) | 24 zmiany | 922 zmiany | 0 zmian | 20 zmian | 🟡 24 korekty 17.09, potem 15 dni ciszy |
+| Łączny koszt Google Ads | 612,07 PLN | 834,31 PLN | 1 384,71 PLN | 1 347,26 PLN | 🟡 -26,6% (mniejsze tempo wydatków) |
+| Przychód ze sklepu (Shopware 6) | 1 877,00 PLN (6 zam.) | 6 895,00 PLN (19 zam.) | 4 737,50 PLN (16 zam.) | 3 816,00 PLN (9 zam.) | 🔴 -72,8% (efekt końca wesel i braku EXPO) |
+| ROAS Shopware vs Google Ads | 3,07 (307%) | 8,26 (826%) | 3,42 (342%) | 2,83 (283%) | 🟡 -62,8% (na progu rentowności 300%) |
+| Koszt Ads na 1 zł przychodu sklepu | 0,326 PLN | 0,12 PLN | 0,29 PLN | 0,35 PLN | 🟡 +171% (granica dopuszczalnych 0,33 zł) |
+| Średnia wartość zamówienia (AOV) | 312,83 PLN | 362,89 PLN | 296,09 PLN | 424,00 PLN | 🟢 Wzorcowo w cel (~300 zł) |
+| Wartość konwersji (Google Ads) | 714,00 PLN | 1 701,00 PLN | 1 596,39 PLN | 674,00 PLN | 🔴 -58,0% (tylko 2 konw. w panelu Ads) |
+| ROAS Google Ads (raportowany) | 1,17 (117%) | 2,04 (204%) | 1,15 (115%) | 0,50 (50%) | 🔴 -42,6% (niedoszacowanie w panelu Ads) |
+| Przychód w GA4 z Google Ads (cpc) | 1 264,00 PLN | 1 626,00 PLN | 2 089,99 PLN | 644,00 PLN | 🟡 -22,3% (obejmuje neon z PM-wesele) |
+| Przychód łączny w GA4 | 1 877,00 PLN | 7 687,00 PLN | brak danych | 2 253,00 PLN | 🟢 100% pokrycia z Shopware w badanym okresie |
+| Sesje łącznie (GA4) | 737 | 1 029 | 1 484 | 1 354 | 🟡 -28,4% (wygaszenie Meta + niższy budżet) |
+| Engagement Rate (GA4) | 67,5% | 61,5% | ok. 45% | ok. 40% | 🟢 +9,8% (wysoka jakość wizyt) |
+| Ruch organiczny GSC (kliknięcia) | 44 | 61 | 53 | 47 | 🟡 Stabilny (3,4 kliku/dzień) |
+| Aktywność agencji (liczba zmian) | 1 zmiana | 24 zmiany | 922 zmiany | 0 zmian | 🔴 Skrajna bierność (1 update w 13 dni) |
 
 ---
 
-### 3 najważniejsze wnioski:
+### 3 najważniejsze wnioski audytu:
 
-1. **🟢 Sklep osiągnął historyczny rekord rentowności (ROAS 8,26, 6 895 PLN przychodu).**  
-   Dzięki ograniczeniu zbędnych wydatków w Google Ads i bardzo wysokiej sprzedaży podświetlanych imion dziecięcych (19 sztuk) oraz neonu (650 PLN), sklep zarobił 6 895 PLN przy koszcie reklam 834,31 PLN. Koszt pozyskania obrotu na poziomie 12 groszy na każdą złotówkę przychodu gwarantuje bardzo wysoki zysk netto po odliczeniu kosztów produkcji (50-60%).
-2. **🟢 Odcięcie wycieku weselnego wreszcie oczyściło ruch i podwoiło ROAS konta Ads.**  
-   Stłumienie kampanii `PM - wesele` z 550 PLN do 71 PLN wyeliminowało ponad 2 400 bezwartościowych kliknięć z gier mobilnych. Średni wskaźnik zaangażowania w GA4 wzrósł z ok. 45% do **61,5%**, a współczynnik odrzuceń (bounce rate) spadł do bardzo zdrowego poziomu **38,5%**.
-3. **🟡 Agencja działa wyłącznie pod presją audytu (15 dni całkowitego braku optymalizacji).**  
-   Zaraz po otrzymaniu raportu #7 agencja cofnęła 24 szkodliwe wykluczenia (17.09 rano), co uratowało konwersje imion LED. Jednak od tamtej pory przez ponad dwa tygodnie na koncie nie wydarzyło się zupełnie nic. Kampania ochrony marki (`SW - brand tCPA`) nadal jest wstrzymana, a kampania produktowa PLA nie doczekała się optymalizacji stawek ani podziału na kategorie.
+1. **🟡 Popyt na imiona LED trwa, ale występuje potężny zator w procesie zakupowym.**  
+   Liczba wyświetleń karty produktu imion i dodania do koszyka w GA4 są niemal identyczne jak we wrześniu (~17 dodań do koszyka tygodniowo). Oznacza to, że klienci chcą personalizować imiona, ale odpadają na etapie kasy. Zaledwie 15–25% osób przechodzi z koszyka do płatności.
+2. **🔴 Ubytek obrotu to przede wszystkim luka po weselach i brak zasilania z Meta.**  
+   Sklep stracił 5–8 tys. zł comiesięcznego przychodu z neonów i wesel. Jeśli nie zapełnimy tej luki sprzedażą imion jako prezentów świątecznych (Q4) oraz nowym asortymentem (np. bombki z imieniem z odpadów CNC), obrót nie wróci do poziomu 13 000+ PLN.
+3. **🔴 Agencja nie prowadzi konta w trybie przygotowania do Q4.**  
+   Zamiast stopniowo skalować budżet imion dziecięcych do 70–80 zł/dzień i testować kreacje świąteczne, konto w październiku wydało średnio tylko 47 zł dziennie, a jedyna zmiana dotyczyła kampanii ślubnej. Konieczne jest twarde wyznaczenie zadań dla agencji do 20 października.
 
 ---
 
-### Ocena pracy agencji: **5/10** (poprawa z 3/10 — działania skuteczne, lecz czysto reaktywne)
+### Ocena pracy agencji: **3/10** (pasywne utrzymanie konta bez myślenia strategicznego)
 
 **Uzasadnienie oceny:**  
-- **Plusy:** Szybka i bezdyskusyjna reakcja 17 września na krytykę audytu (odblokowanie 24 wykluczonych omyłkowo fraz) oraz skuteczne wygaszenie pożaru budżetowego w kampanii weselnej za pomocą strategii docelowego ROAS.
-- **Minusy:** Agencja działa w cyklu "zrób poprawkę zaraz po audycie i zapomnij o koncie na kolejne 2 tygodnie". Od 17 września do 2 października odnotowano **zero optymalizacji**. Kampania ochrony brandu wciąż leży odłogiem (status PAUSED), kampania PLA generuje ruch bez analitycznego nadzoru nad konwersjami, a agencja nie wykazuje żadnej własnej inicjatywy strategicznej.
-
-**Najważniejsza rekomendacja:**  
-Wymusić na agencji włączenie kampanii brandowej `SW - brand tCPA` (przynajmniej z mikro-budżetem 5-10 zł/dzień na zabezpieczenie zapytań o Illuminart przed konkurencją) oraz podział kampanii `PLA - catch all` na podgrupy (Imiona LED vs Neony vs Wesela) z dedykowanymi stawkami, aby wykorzystać nadwyżkę budżetową na skalowanie bestsellerów.
+Konto nie generuje bezpośrednich strat, ale agencja wykazuje zupełny brak proaktywności w najważniejszym dla e-commerce kwartale roku. 1 zmiana na kampanii weselnej w połowie października to marnowanie czasu. Kampania brandowa pozostaje wstrzymana, a w kampaniach PMax głównym celem konwersji nadal pozostaje add-to-cart, co zaburza uczenie Smart Bidding.
 
 ---
 
 ## 2. ROAS i efektywność budżetu
 
-### Zestawienie wskaźników efektywności (Shopware vs GA4 vs Ads)
+### Zbiorcze zestawienie rentowności
 
-| Metryka | Shopware 6 API (Realna sprzedaż) | GA4 API (Śledzenie analityczne) | Google Ads API (Panel reklamowy) | Benchmark z Bazy Wiedzy |
-|---|---|---|---|---|
-| Łączny koszt reklam | 834,31 PLN | 834,31 PLN | 834,31 PLN | Budżet mies.: ~3 000 PLN |
-| Przychód / Wartość | 6 895,00 PLN | 1 626,00 PLN (cpc) / 7 687 PLN łączny | 1 701,00 PLN | Cel: min. 30 000 PLN / mies. |
-| ROAS | 8,26 (826%) 🟢 | 1,95 (195% cpc) / 9,21 łączny | 2,04 (204%) 🟡 | Próg: ≥300% | Cel: 700% |
-| Koszt na 1 zł przychodu | 0,12 PLN 🟢 | 0,51 PLN (cpc) | 0,49 PLN | Max dopuszczalny: 0,33 PLN |
-| Liczba zamówień / konwersji | 19 ważnych (+ 3 anulowane) | 54 conv (cpc) / 163 conv łączne | 5,00 konwersji | — |
-| Średni koszyk (AOV) | 362,89 PLN 🟢 | ok. 300 PLN | 340,20 PLN | Założenie Bazy: ~300 PLN |
+| Wskaźnik | Wartość | Benchmark / Cel biznesowy | Komentarz analityczny |
+|---|---|---|---|
+| Łączny koszt Google Ads | 612,07 PLN | Budżet planowany: ~1 300 PLN na 13 dni | Wykorzystano poniżej 50% dostępnego budżetu |
+| Przychód w panelu Google Ads | 714,00 PLN | — | Panel Ads widzi tylko 2 zakupy |
+| Raportowany ROAS Google Ads | **1,17 (117%)** | Benchmark panelu: min. 300% | Oficjalny ROAS w panelu jest zaniżony przez ubytki śledzenia |
+| Przychód bezpośredni w GA4 (Ads) | 1 264,00 PLN | — | 2 zakupy z PMax Imiona + 1 Neon z PMax Wesele |
+| ROAS Google Ads wg GA4 | **2,07 (207%)** | Granica rentowności: 300% | Realna bezpośrednia efektywność kliknięć Google |
+| Rzeczywisty obrót ze sklepu (Shopware) | **1 877,00 PLN** | Cel z Bazy Wiedzy: min. 30 000 PLN/miesiąc | Obroty sklepu w tempie ~4,3–5 tys. zł/miesiąc |
+| **ROAS Shopware vs Google Ads** | **3,07 (307%)** | **Próg opłacalności z Bazy Wiedzy: 300%** | **Na granicy rentowności operacyjnej** |
+| Koszt Ads na 1 zł obrotu sklepu | **0,326 PLN** | Cel: 0,14 PLN (Limit: 0,33 PLN) | 32,6 gr kosztu Google Ads na 1 zł przychodu brutto |
+| Średnia wartość zamówienia (AOV) | **312,83 PLN** | Założenie Bazy Wiedzy: ~300 PLN | Idealna realizacja założeń koszykowych |
 
-> **Analiza rozbieżności danych i rozdzielenie konwersji:**
-> 1. **Add_to_cart vs Purchase w Google Ads:** Panel Google Ads zarejestrował równo **5,00 konwersji** na łączną kwotę 1 701,00 PLN (wszystkie przypisane do kampanii `PM - Imiona / Neony`). Ponieważ średnia wartość transakcji wyniosła 340,20 PLN, odpowiada to rzeczywistym zakupom. Agencja po przełączeniu na `target_roas` najprawdopodobniej ograniczyła sztuczne pompowanie konwersji przez dodania do koszyka lub algorytm zaczął optymalizować wyłącznie pod zdarzenia o realnej wartości koszyka.
-> 2. **Rzeczywisty ROAS biznesowy (8,26):** Rzeczywisty zwrot z wydatków reklamowych (826%) jest ponad 4-krotnie wyższy niż raportowany bezpośrednio w Google Ads (204%). 
-> 3. **Wielokanałowość sprzedaży (GA4):** Ruch płatny Google Ads odpowiadał za 1 626,00 PLN bezpośredniego przychodu. Jednocześnie ruch organiczny Google wygenerował aż **1 658,00 PLN**, wejścia bezpośrednie (Direct) przyniosły **1 877,00 PLN**, płatne kampanie Meta Ads dołożyły **319,00 PLN**, a asystent ChatGPT (ruch AI referral) wygenerował **269,00 PLN**. Pozostała kwota (1 938 PLN w sekcji `not set`) to transakcje sfinalizowane po przekierowaniu z bramek płatniczych. Świadczy to o rosnącej sile marki i znakomitym domykaniu sprzedaży wielokanałowej.
+> **Ważna uwaga metodologiczna dotycząca ROAS:**
+> Wskaźnik 3,07 odnosi przychód całego sklepu wyłącznie do wydatków w Google Ads (612 zł). Ponieważ w pierwszej dekadzie października działały również płatne reklamy Meta (ADV+ Zakup/Koszyk na FB i IG), całkowity koszt marketingowy był wyższy. Dopóki koszty Meta nie zostaną uwzględnione w kalkulacji, realny *blended ROAS* sklepu kształtuje się poniżej 3,0.
 
 ---
 
-### Rzeczywista struktura sprzedaży wg asortymentu (Dane z zamówień Shopware 6)
+### Zamówienia w Shopware 6 w okresie 03.10 – 15.10.2026
 
-```mermaid
-pie title Struktura przychodu brutto wg kategorii produktów (Shopware 6)
-    "Podświetlane imiona LED dla dzieci (marża 40%)" : 5580
-    "Neony LED na pleksi (marża 50% - najzyskowniejsze)" : 650
-    "Napisy weselne LED" : 345
-    "Dodatki z odpadów CNC (czysty zysk materiałowy)" : 290
-    "Dostawa i akcesoria (po uwzględnieniu rabatów EXPO)" : 30
-```
-
-| Grupa asortymentowa | Przychód brutto (PLN) | Udział w sprzedaży | Liczba sztuk / zamówień | Średnia cena / koszyk | Rentowność produkcji (Baza Wiedzy) |
+| Nr zamówienia | Data | Brutto | Pozycje w koszyku | Źródło atrybucji (GA4) | Rola w marży |
 |---|---|---|---|---|---|
-| 1. Podświetlane imiona LED (Dzieci) | 5 580,00 PLN | 80,9% | 19 szt. w 15 zam. | 293,68 PLN / szt. | Koszt produkcji: ok. 60% ceny (bestseller) |
-| 2. Neony LED na pleksi | 650,00 PLN | 9,4% | 1 szt. ("Miłość") | 650,00 PLN | Koszt produkcji: ok. 50% ceny (NAJWYŻSZA MARŻA) |
-| 3. Napisy weselne LED | 345,00 PLN | 5,0% | 1 szt. ("Razem") | 345,00 PLN | Koszt produkcji: ok. 60% ceny |
-| 4. Dodatki drewniane (odpady CNC) | 290,00 PLN | 4,2% | 5 szt. (chmurki, księżyce, gwiazdki) | 58,00 PLN | Wycinki z odpadów CNC (CZYSTY ZYSK MATERIAŁOWY) |
-| Rabaty targowe (World of Kids EXPO) | -278,00 PLN | -4,0% | 4 zamówienia | -69,50 PLN / zam. | Działania promocyjne targowe |
-| Koszty dostawy (InPost / Kurier) | 308,00 PLN | 4,5% | 14 opłat | 22,00 PLN | Pokrycie logistyki wysyłkowej |
-| SUMA | 6 895,00 PLN | 100,0% | 19 ważnych zam. | 362,89 PLN (AOV) | Próg opłacalności: 300% (Realny: 826%) |
-
-> **Wnioski asortymentowe dla produkcji:**
-> - **Imiona dziecięce jako kręgosłup finansowy:** Sprzedaż 19 sztuk podświetlanych imion (m.in. Staś, Oskar, Noemi, Maksio, Laura, Nadia, Hania, Marysia, Oliwier, Franek, Marcelina, Michalina) pozwoliła wreszcie zbliżyć się do seryjnego wykorzystania maszyn CNC (średnio ponad 1 imię dziennie produkowane "taśmowo").
-> - **Cross-sell dodatków:** Klienci zamawiający imiona dokupili drewniane chmurki, księżyce i gwiazdki za 290 PLN. Produkty te powstają z odpadów sklejki, co oznacza zerowy koszt materiałowy i maksymalizację marży.
-> - **Wpływ rabatu targowego EXPO:** Cztery transakcje z kodem `World of Kids EXPO` przyniosły łącznie 1 390 PLN obrotu po rabacie, co dowodzi skuteczności obecności na wydarzeniach branżowych.
+| **#10162** | 05.10 | 159,00 PLN | Drewniane imię dziecka "Dominik" (140 zł) + dostawa (19 zł) | (direct) | Baza bez oświetlenia (60% kosztu) |
+| **#10163** | 05.10 | 319,00 PLN | Podświetlane imię LED "Ewa" (300 zł) + dostawa (19 zł) | Google Ads (PM - Imiona) | Bestseller (60% kosztu) |
+| **#10164** | 05.10 | 395,00 PLN | Podświetlane imię LED "Łucja" (295 zł) + 5 ozdób: 2x Chmurka (40 zł), Gwiazda (20 zł), 2x Księżyc (40 zł) | Google Ads (PM - Imiona) | **Wzorcowy koszyk:** Imię + 100 zł czystej marży z odpadów CNC! |
+| **#10165** | 06.10 | 365,00 PLN | Podświetlane imię LED "Gabrysia" (325 zł) + 2x Chmurka (40 zł) | m.facebook.com (referral) | Imię + 40 zł czystej marży z odpadów |
+| **#10166** | 08.10 | 89,00 PLN | Gwiazdka (20 zł) + 2x Chmurka (50 zł) + dostawa (19 zł) | (direct) | Same dodatki z odpadów CNC |
+| **#10167** | 13.10 | 550,00 PLN | Neon LED "Miłość" (550 zł) | Google Ads (PM - wesele) | **Najwyższa marża w firmie (50%)** |
+| **SUMA** | — | **1 877,00 PLN** | **4 imiona, 1 neon, 11 dodatków CNC** | — | **AOV: 312,83 PLN** |
 
 ---
 
 ## 3. Szczegółowa analiza kampanii Google Ads
 
-| Kampania | Format / Typ | Status | Koszt (PLN) | Udział w budżecie | Konwersje Ads | Wartość konw. (PLN) | ROAS Ads | Śr. CPC | CTR | CPA Ads | Ocena |
+| Kampania | Format | Status | Koszt (PLN) | Udział | Konwersje Ads | Wartość Ads | ROAS Ads | Śr. CPC | CTR | Przychód GA4 | Ocena |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| PM - Imiona / Neony - 2026 NEW CPA 50 | Performance Max | ENABLED | 581,77 | 69,7% | 5,00 | 1 701,00 | 2,92 | 1,45 PLN | 1,53% | 116,35 PLN | 🟢 Bardzo dobra (główny filar) |
-| PLA - illuminart.pl - catch all | Shopping | ENABLED | 181,26 | 21,7% | 0,00 | 0,00 | 0,00 | 0,86 PLN | 1,63% | — | 🟡 Ruch tani, lecz brak zakupów w Ads |
-| PM - wesele 2026 NEW - CPA 60 | Performance Max | ENABLED | 71,28 | 8,5% | 0,00 | 0,00 | 0,00 | 1,10 PLN | 0,57% | — | 🟡 Uszczelniona (wyciek powstrzymany) |
-| SW - brand tCPA | Search Brand | PAUSED | 0,00 | 0,0% | 0,00 | 0,00 | 0,00 | 0,00 PLN | 0,0% | — | 🔴 Wstrzymana bez powodu |
-| ŁĄCZNIE | — | — | 834,31 | 100% | 5,00 | 1 701,00 | 2,04 | 1,23 PLN | 1,34% | 166,86 PLN | 🟢 Rentowny okres |
+| **PM - Imiona / Neony - 2026 NEW CPA 50** | PMax | ENABLED | 394,21 | 64,4% | 2,00 | 714,00 | 1,81 | 1,28 PLN | 1,61% | 714,00 PLN | 🟡 Główny filar, ale niedoinwestowany |
+| **PM - wesele 2026 NEW - CPA 60** | PMax | ENABLED | 112,77 | 18,4% | 0,00 | 0,00 | 0,00 | 2,01 PLN | 0,63% | 550,00 PLN | 🟡 Drogi CPC (2 zł), wygasić na zimę |
+| **PLA - illuminart.pl - catch all** | Shopping | ENABLED | 105,09 | 17,2% | 0,00 | 0,00 | 0,00 | 0,71 PLN | 1,49% | 0,00 PLN | 🔴 147 kliknięć bez konwersji |
+| **SW - brand tCPA** | Search | PAUSED | 0,00 | 0,0% | 0,00 | 0,00 | 0,00 | — | — | — | 🔴 Brak ochrony marki |
+| **ŁĄCZNIE** | — | — | **612,07** | **100%** | **2,00** | **714,00** | **1,17** | **1,20 PLN** | **1,35%** | **1 264,00 PLN** | 🟡 ROAS vs sklep: 3,07 |
 
 ---
 
-### 1. PM - Imiona / Neony - 2026 NEW CPA 50 🟢 BARDZO DOBRA
-**Typ: Performance Max | Koszt: 581,77 PLN | ROAS Ads: 2,92 | Przychód w panelu: 1 701,00 PLN | Śr. CPC: 1,45 PLN**
+## 4. Słowa kluczowe i analiza wasted spend
 
-- **Wyniki:** Kampania wygenerowała 401 kliknięć przy 26 254 wyświetleniach. Osiągnęła 5 udokumentowanych konwersji zakupowych o łącznej wartości 1 701,00 PLN. ROAS w panelu Ads wzrósł z 1,85 do **2,92 (292%)**, ocierając się o formalny próg 300% bezpośrednio w panelu Google Ads. Koszt pozyskania transakcji (CPA) spadł z 138,39 PLN do **116,35 PLN**.
-- **Wpływ interwencji agencji:** Kluczowe było cofnięcie przez agencję 17 września 24 wykluczeń, które wcześniej odcinały wyświetlanie na zapytania o drewniane lampki i imiona dziecięce. 
-- **Ocena i rekomendacja:** To bezdyskusyjny motor napędowy całego konta reklamowego. Kampania działa stabilnie, pozyskując wartościowych klientów na bestsellery. Rekomendacja: **utrzymać i delikatnie skalować budżet dzienny (+15-20%)**, wykorzystując środki zaoszczędzone na kampanii weselnej.
-
-### 2. PLA - illuminart.pl - catch all 🟡 DO OPTYMALIZACJI
-**Typ: Standard Shopping | Koszt: 181,26 PLN | ROAS Ads: 0,00 | Śr. CPC: 0,86 PLN | Kliknięcia: 211**
-
-- **Wyniki:** Kampania produktowa zanotowała wzrost ruchu (+28% kliknięć, z 165 do 211) przy bardzo korzystnym, niskim koszcie za kliknięcie (0,86 PLN) i zdrowym CTR (1,63%). Jednak w panelu Google Ads nie zarejestrowano żadnej konwersji (w GA4 przypisano jej 189,00 PLN bezpośredniego przychodu i 7 zdarzeń konwersji).
-- **Przyczyna braku konwersji w Ads:** Wszystkie produkty sklepu wrzucone są do jednego worka bez zróżnicowania stawek. Tani ruch zbierają tańsze dodatki i produkty o mniejszym współczynniku konwersji, zamiast eksponować imiona LED i neony w Zakupach Google.
-- **Rekomendacja:** Zamiast kampanii "catch all", agencja powinna podzielić plik produktowy na grupy asortymentowe (Custom Labels w Merchant Center) i podnieść stawki dla podświetlanych imion oraz neonów, obniżając je dla drobnych dodatków.
-
-### 3. PM - wesele 2026 NEW - CPA 60 🟡 WYCIEK ZDŁAWIONY
-**Typ: Performance Max | Koszt: 71,28 PLN | ROAS Ads: 0,00 | Kliknięcia: 65 (wcześniej 2 516)**
-
-- **Wyniki:** Kampania pochłonęła zaledwie **71,28 PLN** (8,5% budżetu konta) w porównaniu do astronomicznych **550,04 PLN** (40% budżetu) w poprzednim okresie. Liczba kliknięć spadła z 2 516 do 65, a średni CTR zredukował się z nienaturalnych 4,99% do 0,57%.
-- **Anatomia zmiany:** Wdrożenie Target ROAS i dodanie setek wykluczeń 16 września rano odcięło fałszywy ruch z gier i aplikacji mobilnych AdMob. Kampania przestała generować straty.
-- **Rekomendacja:** Kampania weselna weszła w stan hibernacji. Ze względu na koniec głównego sezonu ślubnego (październik) należy utrzymać jej minimalny budżet lub wstrzymać ją do wczesnej wiosny 2027, a pozostały budżet weselny skierować w całości na kampanie prezentowe przed zbliżającym się okresem świątecznym (Q4 / Black Friday / Mikołajki).
-
-### 4. SW - brand tCPA 🔴 NADAL WSTRZYMANA (BRAK OCHRONY MARKI)
-**Typ: Search Brand | Koszt: 0,00 PLN | Status: PAUSED**
-
-- Kampania ochrony marki nadal nie została uruchomiona przez agencję. W tym samym czasie w Google Search Console odnotowano **19 wejść z zapytań czysto brandowych** (`illuminart`, `iluminart`, `ilumiart`). Brak aktywnej kampanii brandowej Search stwarza niepotrzebne ryzyko przechwycenia zdecydowanych klientów przez konkurencję licytującą się na nazwę Illuminart.
-
----
-
-## 4. Słowa kluczowe i wyszukiwane frazy
-
-### Bilans słów kluczowych i analiza wasted spend
-
-- **Kampanie wyszukiwania (Search):** W koncie znajduje się 515 słów kluczowych, jednak ze względu na wstrzymanie kampanii `SW - brand tCPA`, żadne słowo tekstowe nie wygenerowało kosztu ani wyświetleń.
-- **Przepalony budżet (Wasted spend):**
-  - **Poprzedni okres:** Ponad **550 PLN** bezpowrotnie przepalone w `PM - wesele` na puste kliknięcia displayowe.
-  - **Obecny okres:** Wasted spend zredukowany do zaledwie **71,28 PLN** (koszt kampanii weselnej, która nie przyniosła sprzedaży). Oznacza to **spadek strat o 87%**!
-- **Analiza unblockingu z 17 września:** Usunięcie 24 wykluczeń przez `kontakt@mediasolutions.pro` przywróciło do obiegu frazy związane z lampkami dziecięcymi i imionami na ścianę. Efektem było natychmiastowe zrealizowanie 19 zamówień imion w Shopware.
+- **Dominacja PMax (82,8% budżetu):** Google ukrywa pełne raporty zapytań w kampaniach Performance Max.
+- **Wasted spend bezpośredni:**
+  1. `PLA - catch all`: **105,09 PLN** wydane w 147 kliknięciach bez jakiejkolwiek konwersji.
+  2. `PM - wesele`: ok. **50–60 PLN** pochłonięte przez drogie kliknięcia poza sezonem (średni CPC wzrósł do 2,01 PLN).
+- **Negatywy do wdrożenia na poziomie konta:**
+  `darmowe`, `jak zrobić`, `diy`, `szablon`, `wektor`, `kolorowanka`, `aliexpress`, `temu`, `allegro`, `olx`, `wynajem neonów wesele`, `wypożyczalnia napisów`.
 
 ---
 
 ## 5. Aktywność agencji (Change History)
 
-W badanym okresie na koncie zarejestrowano łącznie **24 operacje**, wszystkie o identycznej charakterystyce:
+W okresie 03.10 – 15.10.2026 w API Google Ads zarejestrowano **dokładnie 1 zmianę**:
+- **2026-10-07 20:59:34** | `kontakt@mediasolutions.pro` | Aktualizacja: `maximize_conversion_value.target_roas` w kampanii `PM - wesele 2026 NEW - CPA 60`.
 
-```
-2026-09-17 09:16:19 | kontakt@mediasolutions.pro | REMOVE | CAMPAIGN_CRITERION | PM - Imiona / Neony
-(łącznie 24 usunięcia kryteriów wykluczających)
-```
-
-### Rozkład zmian w czasie i ocena zaangażowania:
-- **17.09.2026 (godz. 09:16 rano):** **24 zmiany** — usunięcie wykluczeń z kampanii `PM - Imiona / Neony`. Działanie będące bezpośrednią reakcją na raport audytowy #7 opublikowany 16 września wieczorem.
-- **18.09.2026 — 02.10.2026:** **0 ZMIAN (15 dni całkowitego bezruchu)**.
-
-### Ocena merytoryczna:
-1. **Reakcja naprawcza na plus:** Agencja nie kłóciła się z wnioskami audytu i błyskawicznie cofnęła najbardziej szkodliwe wykluczenia, co uchroniło sklep przed zapaścią sprzedaży imion dziecięcych.
-2. **Brak pracy ciągłej na minus:** Fakt, że przez 15 kolejnych dni nikt z agencji nie zajrzał na konto reklamowe, potwierdza model pracy czysto "pod kontrolę". Agencja nie zarządza stawkami w PLA, nie testuje nowych nagłówków i nie przygotowuje konta do kluczowego dla e-commerce IV kwartału.
+Agencja nie wykonała żadnych prac nad kampanią imion, nie uruchomiła kampanii brandowej ani nie wdrożyła kreacji świątecznych.
 
 ---
 
-## 6. Ruch organiczny (Google Search Console & SEO)
+## 6. Ruch organiczny (Google Search Console)
 
-Ruch organiczny przeżywa systematyczny renesans i staje się równorzędnym filarem przychodowym dla płatnych reklam Google Ads.
-
-### Trend dzienny GSC (17.09 – 29.09):
-- **Łączna liczba kliknięć:** **61** (wzrost z 53 w raporcie #7, 47 w #6 i 43 w #5).
-- **Łączna liczba wyświetleń:** **4 174**.
-- **Średnia pozycja:** Poprawa z **12.5** do **7.8 – 8.3** w ostatnich dniach września.
-
-```
-Dzień:          17.09  18.09  19.09  20.09  21.09  22.09  23.09  24.09  25.09  26.09  27.09  28.09  29.09
-Kliknięcia:       3      3      5      2      6      7      2      8      7      0      6      5      7
-Śr. pozycja:    19.6   17.7   17.8   14.0   11.3   14.4   14.0   12.7    8.6    8.3    7.8    7.8    8.3
-```
-
-### Top zapytania organiczne generujące ruch:
-1. **Frazy brandowe:** `illuminart` (11 kliknięć, poz. 1.0), `iluminart` (7 kliknięć, poz. 1.0), `ilumiart` (1 klik, poz. 2.0).
-2. **Frazy produktowe generujące kliknięcia:**
-   - `podświetlane imię dziecka na ścianę` (1 klik, 14 wyświetleń, **pozycja 3.1** — top wyników organicznych!)
-   - `zaprojektuj napis` (1 klik, 7 wyświetleń, **pozycja 5.6** — trafia bezpośrednio do kreatora USP)
-   - `led z imieniem na ścianę` (1 klik, 39 wyświetleń, **pozycja 8.3**)
-   - `własny napis led na ścianę` (1 klik, 26 wyświetleń, **pozycja 10.9**)
-   - `drewniane imię dziecka na ścianę` (1 klik, 6 wyświetleń, **pozycja 11.2**)
-   - `led personalizowany napis` (1 klik, 1 wyświetlenie, **pozycja 18.0**)
-
-### Frazy z wysokim potencjałem SEO (Quick Wins):
-- `napis podświetlany`: 29 wyświetleń, **pozycja 6.7** (brak kliknięć) — optymalizacja meta title i description na stronie głównej może przynieść darmowe wejścia z tej frazy.
-
-### Top podstrony w Google Search Console:
-1. Strona główna `https://illuminart.pl/`: 22 kliknięcia, 211 wyświetleń, poz. 3.9.
-2. Kreator `https://illuminart.pl/zaprojektuj-sam/`: 11 kliknięć, 892 wyświetlenia, poz. 14.4.
-3. Kategoria `https://illuminart.pl/dla-dzieci/imiona-podswietlane-led/`: 6 kliknięć, 327 wyświetleń, poz. 7.2.
-4. Produkt `https://illuminart.pl/podswietlane-imie-dziecka-led/12835`: 4 kliknięcia, 312 wyświetleń, poz. 4.4.
+- **Kliknięcia organiczne:** **44** (średnio 4,0/dzień)
+- **Wyświetlenia:** **2 585**
+- **Średnia pozycja:** **9,9** (poprawa do 6,4 – 7,4 w dniach 11–13.10)
+- **Zapytania brandowe:** `illuminart` (8 kliknięć, poz. 1,0) oraz `iluminart` (5 kliknięć, poz. 1,0). Razem 13 kliknięć (29,5% całego ruchu SEO).
+- **Frazy blisko TOP3 (Quick Wins):**
+  - `napis podświetlany` (29 wyśw., poz. 4,7)
+  - `podświetlany napis` (27 wyśw., poz. 5,6)
+  - `napis led imie` (13 wyśw., poz. 3,7)
+  - `imię led na ścianę` (9 wyśw., poz. 3,4)
 
 ---
 
-## 7. Porównanie z poprzednimi okresami
+## 7. Porównanie z poprzednimi okresami (Trend 4 audytów)
 
-### Zestawienie 4 ostatnich audytów (Ewolucja wskaźników)
+```
+ROAS Sklepu (Shopware vs Google Ads):
+#6 (Sierpień):   ████████ 2,83
+#7 (Pocz. Wrz):  ██████████ 3,42
+#8 (Koniec Wrz): ████████████████████████ 8,26  (Efekt EXPO + kumulacja zamówień)
+#9 (Październik):█████████ 3,07                (Stabilna rentowność, mniejsza skala)
 
-| Okres audytowy | Koszt Google Ads | Przychód Shopware | Realny ROAS Shopware | ROAS w Google Ads | Liczba zamówień | Status wycieku weselnego |
-|---|---|---|---|---|---|---|
-| Raport #5 (29.07 – 19.08, 21 dni) | 2 163,39 PLN | 7 166,00 PLN | 3,31 (331%) | 1,96 (196%) | 16 zam. | Początek przepalania budżetu |
-| Raport #6 (20.08 – 03.09, 14 dni) | 1 347,26 PLN | 3 816,00 PLN | 2,83 (283%) 🔴 | 0,50 (50%) 🔴 | 9 zam. | Katastrofa: 532 PLN w wesele (0 conv) |
-| Raport #7 (03.09 – 16.09, 14 dni) | 1 384,71 PLN | 4 737,50 PLN | 3,42 (342%) 🟡 | 1,15 (115%) 🟡 | 16 zam. | 550 PLN w wesele, nocny zryw agencji |
-| **Raport #8 (17.09 – 02.10, 16 dni)** | **834,31 PLN** 🟢 | **6 895,00 PLN** 🟢 | **8,26 (826%)** 🟢 | **2,04 (204%)** 🟢 | **19 zam.** 🟢 | **Wyciek stłumiony (71 PLN), rekord ROAS** |
-
-### Weryfikacja realizacji zaleceń z Raportu #7:
-1. **Żądanie odblokowania fraz produktowych:** ✅ **Wdrożone natychmiast.** Agencja usunęła 24 wykluczenia 17.09 o 09:16.
-2. **Stłumienie lub wyłączenie kampanii `PM - wesele`:** ✅ **Wdrożone.** Wydatki spadły z 550 zł do 71 zł, co uratowało płynność konta.
-3. **Włączenie kampanii ochrony marki `SW - brand tCPA`:** ❌ **Niewdrożone.** Kampania nadal ma status PAUSED.
-4. **Segmentacja i optymalizacja PLA catch all:** ❌ **Niewdrożone.** Kampania nadal działa bez podziału na kategorie marżowe.
+Liczba zamówień w Shopware:
+#6: 9 zam.
+#7: 16 zam.
+#8: 19 zam.
+#9: 6 zam. (Wygaszenie wesel i boosterów wrześniowych)
+```
 
 ---
 
 ## 8. Problemy i ryzyka
 
-### 🔴 Krytyczne (Wymagają interwencji)
-- **Brak ochrony marki (Brand PAUSED):** Zapytania o `illuminart` (19 kliknięć w GSC) nie są zabezpieczone reklamą tekstową. W przypadku pojawienia się konkurencji licytującej markę sklep może stracić najbardziej zdecydowanych klientów.
+### 🔴 Krytyczne
+1. **Przeciek w koszyku:** Popyt na imiona utrzymuje się na wysokim poziomie, ale klienci porzucają koszyki przed wyborem dostawy i płatności.
+2. **Gwałtowny spadek płatnego ruchu (Meta + Ads):** Równoczesne wygaśnięcie ruchu z Facebooka/Instagrama i niskie tempo wydatków w Ads odcięły dopływ nowych użytkowników.
+3. **Brak ochrony marki (Brand PAUSED):** Zapytania o nazwę sklepu pozostają bez ochrony reklamowej.
 
-### 🟡 Ważne (Do zaadresowania w ciągu 2 tygodni)
-- **Monokultura produktowa w kampanii produktowej PLA:** Kampania `PLA - catch all` wydała 181,26 PLN przy 211 kliknięciach i 0 konwersjach w Ads. Niezbędna jest segmentacja feedu, by promować produkty o najwyższej konwersji i marży (imiona LED i neony).
-- **Pasywność agencji pomiędzy audytami:** 15 dni bez jakiejkolwiek aktywności w okresie przedświątecznym to marnowanie czasu. Za chwilę startuje Black Friday i sezon prezentowy na Boże Narodzenie (kluczowy okres dla imion dziecięcych jako prezentów).
-
-### 🟢 Do obserwacji (Monitorować w kolejnym raporcie)
-- **Wygaszenie kampanii weselnej:** Koszt 71 zł jest bezpieczny, ale jeśli do połowy października kampania nie zanotuje żadnego zapytania o ofertę weselną na sezon 2027, należy ją całkowicie wstrzymać na zimę.
-- **Utrzymanie stabilnego koszyka AOV:** Obecny AOV 362,89 PLN jest bardzo zdrowy, warto dbać o stałą ekspozycję dodatków z odpadów CNC w procesie zakupowym.
-
----
-
-## 9. Rekomendacje
-
-| Priorytet | Działanie | Uzasadnienie (na podstawie danych) | Oczekiwany efekt |
-|---|---|---|---|
-| **WYSOKI** | **Wznowić kampanię `SW - brand tCPA`** | 19 zapytań brandowych w GSC; ryzyko podebrania ruchu przez konkurencję. Wystarczy symboliczny budżet 5-10 PLN/dzień. | 100% ochrona zapytań o markę Illuminart przy minimalnym koszcie. |
-| **WYSOKI** | **Przygotować kampanie na Q4 (Święta / Black Friday)** | Imiona LED to idealny prezent dla dzieci pod choinkę (19 sprzedanych sztuk w obecnym okresie). Q4 to żniwa e-commerce. | Wykorzystanie nadwyżki budżetowej na skokowe zwiększenie sprzedaży do celu 30 000 PLN/mies. |
-| **ŚREDNI** | **Podzielić i zoptymalizować `PLA - catch all`** | 211 kliknięć za 181 PLN bez konwersji w Ads. Wszystkie produkty mają obecnie tę samą stawkę. | Przekierowanie ruchu Zakupów Google na imiona LED i neony, podniesienie ROAS z PLA. |
-| **ŚREDNI** | **Zwiększyć budżet `PM - Imiona / Neony` o 15-20%** | Kampania ma ROAS 2,92 w Ads i CPA 116 PLN, przynosząc 80% sprzedaży sklepu. | Skalowanie zyskownego kanału ze środków zaoszczędzonych na kampanii weselnej. |
-| **NISKI** | **Wstrzymać `PM - wesele` na okres zimowy** | Sezon ślubny 2026 dobiegł końca. Ostatnie 71 PLN nie przyniosło żadnej konwersji. | Zaoszczędzenie kolejnych 100-150 PLN miesięcznie na rzecz kampanii prezentowych. |
+### 🟡 Ważne
+1. **Wąskie gardło wolumenu dla CNC:** Zdolności produkcyjne (10 imion/dzień) wykorzystywane w zaledwie ~4%.
+2. **Algorytm uczący się na add_to_cart:** Kampanie PMax optymalizują się pod dodania do koszyka, a nie pod rzeczywiste zakupy.
+3. **Podwójne zliczanie transakcji w GA4:** GA4 rejestruje w niektórych tygodniach więcej zakupów niż faktycznie zrealizowano w Shopware, co wprowadza w błąd algorytmy licytujące.
 
 ---
 
-## 10. Propozycja: Cel 30k (Strategia wzrostu na Q4)
+## 9. Rekomendacje działań (Podsumowanie operacyjne)
 
-Aby zrealizować nadrzędny cel biznesowy z Bazy Wiedzy (**minimum 30 000 PLN miesięcznej sprzedaży** wobec obecnych ~13–14 tys. PLN) oraz odblokować potencjał 2 maszyn CNC (obecnie wykorzystywanych w zaledwie ~15%), proponujemy zintegrowaną strategię wzrostu na IV kwartał (sezon Black Friday, Mikołajki i Boże Narodzenie).
-
-### 1. Filar B2C: „Operacja Święty Mikołaj” (Dźwignia prezentowa)
-- **Skalowanie kampanii `PM - Imiona / Neony`:** Podniesienie budżetu dziennego z ~35 PLN do 70–80 PLN/dzień. Mamy na to środki w ramach miesięcznego limitu 3 000 PLN dzięki stłumieniu strat w kampanii weselnej. Przy obecnym CPA 116 PLN to dodatkowe 15–20 zamówień miesięcznie.
-- **Segmentacja Zakupów Google (PLA):** Wydzielenie w feedzie grupy produktowej Imion LED z wyższymi stawkami CPC (1,20–1,50 PLN), by eksponować bestsellery na zapytania prezentowe.
-- **Tryb Prezentowy w sklepie (Shopware):** Opcja w koszyku *„Zapakuj na prezent świąteczny”* (+29 lub +39 PLN za karton z okienkiem, wstążkę i bilecik). Podbicie AOV do ~400 PLN i dodatkowa marża ~30 PLN na zamówieniu.
-- **Gwarancja dostawy do Wigilii:** Od połowy listopada wprowadzenie widocznego licznika i gwarancji doręczenia przed 24 grudnia.
-
-### 2. Filar Social Media & Content: „Fabryka Imienia” (Organiczny Viral)
-- **Format wideo (TikTok & Reels):** Krótkie 15-sekundowe filmy pokazujące proces: wpisanie imienia w kreatorze na stronie -> praca maszyny CNC (wióry, precyzja) -> montaż LED -> zgaszenie światła w pokoju dziecka i efekt WOW.
-- **Viral Call to Action:** *„Wpisz w komentarzu imię swojego dziecka, a wybiórczo wytniemy je w następnym filmie!”* (budowanie bazy zaangażowanych rodziców).
-- **Format „Twoje zamówienie na maszynie”:** Krótkie relacje z gotowymi partiami imion — klienci chętnie udostępniają takie materiały na swoich prywatnych profilach, generując bezpłatny word-of-mouth.
-
-### 3. Filar B2B: Zapewnienie zamówień seryjnych dla maszyn CNC
-- **Pakiety dla Przedszkoli i Żłobków:** Oferta podświetlanych herbów grup przedszkolnych (*Biedronki, Krasnale, Smerfy, Pszczółki*). Jedno zamówienie na 5–8 znaków to 1 500 – 2 500 PLN obrotu i idealna produkcja taśmowa na maszynach CNC bez przestojów.
-- **Neony LED dla Gastronomii i Beauty:** Wykorzystanie najwyższej marży w firmie (50%) w martwym sezonie weselnym poprzez skierowanie oferty neonów z logo do salonów kosmetycznych, fryzjerskich i kawiarni odświeżających wystrój przed świętami.
-
-### 4. Filar Koszykowy: Maksymalizacja zysku z odpadów CNC
-- **One-Click Upsell w koszyku:** Checkbox na karcie imienia: *„Dobierz zestaw 3 drewnianych chmurek i gwiazdek za jedyne 35 zł (zamiast 45 zł)”*.
-- **Wpływ na zysk:** 100% zysku materiałowego (odpady sklejki) i dodatkowe 700–1 000 PLN czystego dochodu miesięcznie przy 40–50 zamówieniach.
-
-### Harmonogram wdrożenia (Najbliższe 7–14 dni)
-
-| Priorytet | Zadanie | Odpowiedzialny | Spodziewany efekt |
+| Priorytet | Działanie | Odpowiedzialny | Cel |
 |---|---|---|---|
-| 🔴 **Dziś / Jutro** | Podnieść budżet `PM - Imiona` do 75 zł/dzień i włączyć `SW - brand` (5 zł/dzień). | Agencja Ads | +15–20 zamówień miesięcznie ze sprawdzonego źródła. |
-| 🔴 **Dziś / Jutro** | Wdrożyć checkbox upsellu dodatków CNC (chmurki/gwiazdki) za 35 zł w koszyku. | Leszek (IT) | Wzrost AOV o 20–30 zł, 100% czystej marży materiałowej. |
-| 🟡 **W tym tygodniu** | Opublikować 3 pierwsze rolki z cięcia CNC konkretnych imion na TikToku/Reels. | Marek + Marcin | Uruchomienie bezpłatnego zasięgu organicznego. |
-| 🟡 **Do 15 października** | Przygotować pakiet świąteczny z opcją pakowania i gwarancją dostawy. | Leszek + Marek | Przygotowanie sklepu na szczyt zakupowy Q4. |
-| 🟢 **Do końca miesiąca** | Wysłanie dedykowanej oferty herbów grup LED do 50 przedszkoli/żłobków. | Marcin (B2B) | Pierwsze zlecenia seryjne eliminujące wąskie gardło maszyn. |
+| 🔴 **KRYTYCZNY** | **Przestawić add_to_cart na konwersję dodatkową w Google Ads** | Agencja | Zmuszenie algorytmu do szukania płacących klientów, a nie tylko klikających koszyk. |
+| 🔴 **KRYTYCZNY** | **Wprowadzić próg darmowej dostawy jako dźwignię dla dodatków CNC** | Zespół / IT | Komunikat: *„Dobierz chmurkę za 20 zł — dostawa gratis”*. Odbudowa attach-rate dodatków. |
+| 🟡 **WYSOKI** | **Stopniowo podnieść budżet `PM - Imiona` do 60–75 zł/dzień** | Agencja | Przygotowanie konta pod szczyt prezentowy Q4 (+20% co 3 dni). |
+| 🟡 **WYSOKI** | **Wstrzymać `PLA - catch all` oraz `PM - wesele` na zimę** | Agencja | Przeniesienie budżetu na imiona i remarketing porzuconych koszyków. |
+| 🟡 **WYSOKI** | **Wdrożyć nowy produkt na święta: drewnianą bombkę z imieniem z odpadów** | Produkcja / IT | Tani produkt wejściowy (39–59 zł) ze 100% marżą materiałową. |
+| 🟢 **ŚREDNI** | **Kampania mailingowa/SMS do 130 dotychczasowych klientów przed Mikołajkami** | Marketing | Tani re-engagement z ofertą na drugie imię dla rodzeństwa lub prezent dla chrześniaka. |
+
+---
+
+## 10. Strategia wzrostu: „Operacja Święty Mikołaj” (Q4 Roadmap)
+
+1. **Pozycjonowanie prezentowe w reklamach (od 20.10):** Wprowadzenie haseł: *„Personalizowany Prezent na Mikołajki i Święta”*, *„Zaprojektuj Imię Dziecka na Żywo”*.
+2. **Dodatek koszykowy w Shopware (+29 zł):** Opcja *„Zapakuj na prezent w elegancki karton ze wstążką”*.
+3. **Konkretne terminy gwarantowanej dostawy:** Wyraźny licznik na stronie sklepu od połowy listopada (*„Zamów do 15 grudnia — gwarancja dostawy przed Wigilią”*).
+
+---
+---
+
+# 11. 🔬 DOKUMENT SPECJALNY: Dogłębna diagnoza spadku sprzedaży, pełny trend bestselleru LED i strategia naprawcza
+
+*(Sekcja opracowana na podstawie pełnej analizy bazy 143 zamówień Shopware od 28.04.2026, tygodniowego lejka GA4 oraz wielomiesięcznych danych Google Ads)*
+
+> [!IMPORTANT]
+> **Skala danych:** Sklep realizuje obecnie 5–10 zamówień tygodniowo. Przy takiej skali wahania rzędu 3 vs 7 zamówień w pojedynczym tygodniu mogą wynikać z losowości. Poniższa diagnoza i rekomendacje opierają się na twardych trendach wielotygodniowych i wielomiesięcznych.
+
+---
+
+### 11.1. Co się właściwie stało? Prawdziwa anatomia spadku obrotu
+
+Wielomiesięczne zestawienie danych Shopware (z wyłączeniem zamówień anulowanych) pokazuje pełen obraz sytuacji:
+
+| Miesiąc | Zamówienia | Przychód brutto | Imiona LED (szt./wartość) | Neony LED | Napisy weselne | Dodatki CNC (odpady) |
+|---|---|---|---|---|---|---|
+| **05.2026** | 14 | 5 552 zł | 7 szt. (1 945 zł) | 0 zł | 1 430 zł | 255 zł |
+| **06.2026** | 20 | 9 419 zł | 8 szt. (2 440 zł) | 4 690 zł | 745 zł | 220 zł |
+| **07.2026** | 29 | 13 572 zł | 12 szt. (3 765 zł) | 6 240 zł | 2 595 zł | 440 zł |
+| **08.2026** | 28 | 13 088 zł | 14 szt. (4 490 zł) | 3 610 zł | 2 570 zł | 370 zł |
+| **09.2026** | **34** | **11 632 zł** | **24 szt. (7 265 zł)** | 2 310 zł | 680 zł | 325 zł |
+| **10.2026 (1–15)** | **8** | **2 588 zł** | **6 szt. (1 785 zł)** | 550 zł | 0 zł | 210 zł |
+
+*(Uwaga: w zestawieniu 10.2026 uwzględniono 8 zamówień opłaconych/zrealizowanych z całego miesiąca do 15.10).*
+
+Październik generuje obrót w tempie **ok. 5 000 zł/miesiąc**, wobec 11 500 – 13 500 zł w okresie lipiec–wrzesień. Spadek ten wynika z **trzech nakładających się przyczyn**:
+
+1. **Skończył się sezon weselny (kluczowa przyczyna utraty przychodu):**  
+   W lipcu i sierpniu neony oraz gotowe napisy weselne przynosiły **6 000 – 9 000 zł miesięcznie** (połowa całego obrotu firmy!). We wrześniu kategoria ta skurczyła się do 3 000 zł, a w październiku do zaledwie 550 zł. Imiona LED — ze względu na niższą cenę (~300 zł vs 550–950 zł za neon) — nie były w stanie zasypać tej luki kwotowej.
+2. **Wrzesień był sztucznie podbity jednorazowymi czynnikami:**  
+   Rekordowe 24 imiona we wrześniu wynikały z obecności na targach *World of Kids EXPO* (4 zamówienia z dedykowanym kodem) oraz bardzo silnego ruchu z kampanii Meta (175–284 sesje tygodniowo z FB i IG w tygodniach 34–37). Październikowe tempo sprzedaży imion (ok. 12 szt./mies.) **jest dokładnie na poziomie udanego lipca i sierpnia**. Nie mamy do czynienia z katastrofą popytu na imiona, lecz z powrotem do normy po jednorazowym piku promocyjnym.
+3. **Równoczesny spadek płatnego ruchu ze wszystkich źródeł w październiku:**  
+   - **Meta (FB/IG):** Ruch załamał się ze 134 sesji w tygodniu 41 do zaledwie 3 sesji w tygodniu 42. Kampania Meta została wyłączona lub skończył się jej budżet ok. 11–12 października.
+   - **Google Ads:** Kampania imion wydawała latem ok. 350 zł tygodniowo, a na przełomie września i października 200–290 zł tygodniowo. Całe konto zwolniło z ~700 zł/tydz. do 300–400 zł/tydz.
+   - **Direct (wejścia bezpośrednie):** Spadek ze 100–150 sesji tygodniowo latem do 35 sesji w tyg. 41 (koniec poleceń weselnych).
+
+---
+
+### Tydzień po tygodniu (Ostatnie 10 tygodni — W33 do W42)
+
+| Tydzień (ISO) | Zamówienia | Przychód | Imiona LED (szt.) | Koszt Google Ads | Sesje GA4 | Sesje FB/IG | Direct |
+|---|---|---|---|---|---|---|---|
+| **W33 (10–16.08)** | 7 | 3 034 zł | 3 szt. | 702 zł | 314 | 44 | 149 |
+| **W34 (17–23.08)** | 8 | 4 555 zł | 3 szt. | 679 zł | 595 | 175 | 99 |
+| **W35 (24–30.08)** | 5 | 2 078 zł | 4 szt. | 659 zł | 645 | 240 | 59 |
+| **W36 (31.08–06.09)** | 10 | 2 141 zł | 6 szt. | 692 zł | 712 | 234 | 73 |
+| **W37 (07–13.09)** | 5 | 1 742 zł | 3 szt. | 759 zł | 806 | 284 | 76 |
+| **W38 (14–20.09)** | 9 | 4 347 zł | 5 szt. | 415 zł | 627 | 207 | 63 |
+| **W39 (21–27.09)** | 8 | 2 773 zł | 7 szt. | 423 zł | 387 | 19 | 52 |
+| **W40 (28.09–04.10)** | 5 | 1 704 zł | 7 szt. | 270 zł | 514 | 118 | 86 |
+| **W41 (05–11.10)** | 5 | 1 327 zł | 3 szt. | 410 zł | 451 | 134 | 35 |
+| **W42 (12–15.10)** | 1 | 550 zł | 0 szt. | 158 zł | 219 | 3 | 14 |
+
+---
+
+### 11.2. Diagnoza lejka e-commerce: Gdzie naprawdę uciekają pieniądze?
+
+1. **Popyt na imiona LED nie spadł:** W tygodniach 40 i 41 karta produktu imion LED zanotowała odpowiednio **301 i 242 odsłony oraz po 17 dodań do koszyka tygodniowo**! To liczby identyczne jak w szczytowym wrześniu. Zainteresowanie personalizowanymi lampkami istnieje i jest stabilne.
+2. **Krytyczny przeciek między koszykiem a kasą:** Jedynie 15–25% osób dodających produkt do koszyka przechodzi do etapu finalizacji zamówienia (w zdrowym e-commerce benchmark wynosi 35–50%). Klienci bawią się kreatorem, sprawdzają imię, dodają do koszyka i rezygnują, gdy widzą koszty dostawy lub brak natychmiastowego bodźca zakupowego.
+3. **Anomalia na urządzeniach stacjonarnych (Desktop):** W ostatnich tygodniach zarejestrowano zaledwie 0–5 dodań do koszyka na 60–100 sesji desktopowych tygodniowo (podczas gdy w W34 było ich 24). Niezbędny jest natychmiastowy test działania kreatora na komputerach stacjonarnych i różnych przeglądarkach.
+4. **Zawyżanie zakupów w GA4 względem Shopware:** W tygodniu 36 GA4 zarejestrowało 17 zakupów (w Shopware było 10), a w tygodniu 38 aż 20 zakupów (w Shopware było 9). Wskazuje to na duplikowanie zdarzenia `purchase` (np. przy ponownym załadowaniu strony podziękowania). Jeśli algorytm Google Ads uczy się na podwojonych konwersjach, licytuje stawki w oparciu o fałszywy sygnał.
+5. **Potencjał ubiegłorocznego Q4:** Na koncie Google Ads w okresie wrzesień–grudzień 2025 wartość zaraportowanych konwersji wynosiła 34 000 – 42 000 PLN miesięcznie przy kosztach rzędu 2 000 – 2 900 PLN. Nawet przy uwzględnieniu zawyżeń Smart Bidding, potwierdza to, że **dla podświetlanych imion dziecięcych IV kwartał to absolutne żniwa sprzedażowe**.
+
+---
+
+### 11.3. Produkt: „Podświetlane imię dziecka LED” — Pełny trend od początku zbierania danych
+
+Łączny bilans produktu od pierwszego zarejestrowanego zamówienia (28.04.2026 do 15.10.2026):  
+**71 sprzedanych sztuk | 21 690,00 PLN obrotu | 67 zamówień** (z wyłączeniem anulowanych).
+
+| Miesiąc | Liczba sztuk | Przychód brutto | Zamówienia z imieniem | Udział w obrocie sklepu | Średnia cena imienia | Koszyki z dodatkiem CNC | Attach Rate dodatków |
+|---|---|---|---|---|---|---|---|
+| **05.2026** | 7 szt. | 1 945 zł | 6 zam. | 35,0% | 278 zł | 2 z 6 | 33,3% |
+| **06.2026** | 8 szt. | 2 440 zł | 8 zam. | 25,9% | 305 zł | 1 z 8 | 12,5% |
+| **07.2026** | 12 szt. | 3 765 zł | 12 zam. | 27,7% | 314 zł | 7 z 12 | **58,3%** |
+| **08.2026** | 14 szt. | 4 490 zł | 14 zam. | 34,3% | 321 zł | 6 z 14 | 42,9% |
+| **09.2026** | **24 szt.** | **7 265 zł** | **22 zam.** | **62,5%** | 303 zł | 4 z 22 | **18,2%** |
+| **10.2026 (1–15)** | 6 szt. | 1 785 zł | 5 zam. | 69,0% | 298 zł | 2 z 5 | 40,0% |
+
+```
+Wolumen sprzedaży (sztuki / miesiąc):
+05.2026: ███████ 7 szt.
+06.2026: ████████ 8 szt.
+07.2026: ████████████ 12 szt.
+08.2026: ██████████████ 14 szt.
+09.2026: ████████████████████████ 24 szt.  (Pik EXPO + Meta)
+10.2026: ██████ 6 szt. (pierwsza połowa miesiąca — tempo ~12 szt./mies.)
+```
+
+**Kluczowe wnioski produktowe:**
+- **Systematyczny organiczny wzrost:** Od maja do sierpnia sprzedaż imion rosła stabilnie (7 → 8 → 12 → 14 sztuk). Wrzesień był anomalią na plus (24 sztuki dzięki EXPO i Meta). Październik nie jest krachem, lecz powrotem do trajektorii letniej.
+- **Stabilność cenowa:** Średnia cena utrzymuje się w wąskim przedziale 280–320 zł (najpopularniejszy wariant: 295–300 zł).
+- **Złudny wzrost udziału w obrocie (z 26% do 69%):** Imiona dominują w strukturze sprzedaży nie dlatego, że nastąpił gigantyczny skok ich sprzedaży, ale dlatego, że wyzerowała się sprzedaż neonów i wesel.
+- **Drastyczny spadek dołączania dodatków CNC (Attach Rate):** W lipcu aż 58% klientów zamawiających imię dokupowało drewniane chmurki lub gwiazdki. We wrześniu wskaźnik ten spadł do zaledwie 18%! Oznacza to ogromny niewykorzystany potencjał marżowy w koszyku.
+
+---
+
+### 11.4. Strategia naprawcza — Google Ads (Krok po kroku)
+
+#### Krok 1: Naprawa fundamentów analitycznych (Natychmiast)
+- **Przestawienie konwersji głównej w Google Ads:** Zmienić cel `add_to_cart` z konwersji *głównej (Primary)* na *dodatkową (Secondary/Observation)*. Algorytm Smart Bidding z Target ROAS musi optymalizować stawki pod kątem osób, które **dokonują zakupu (Purchase)**, a nie tych, które jedynie dodają produkt do koszyka i wychodzą.
+- **Audyt podwójnego zliczania `purchase`:** Zweryfikować wdrożenie tagu w Shopware, by odświeżenie strony `checkout/finish` nie generowało kolejnego zdarzenia zakupu.
+- **Wdrożenie Enhanced Conversions (Rozszerzone konwersje):** Przesyłanie haszowanych danych pozwoli odzyskać 15–20% utraconych konwersji po odrzuceniu ciasteczek.
+
+#### Krok 2: Przebudowa struktury budżetowej (Docelowo ~100 PLN/dzień)
+- **`PM - Imiona / Neony` (Skalowanie):** Podnieść budżet dzienny z obecnych ~35 zł do **60 zł, a po 4 dniach do 75–80 zł/dzień**. Zwiększanie budżetu o 20% co 3–4 dni zabezpiecza kampanię przed ponownym wejściem w głęboką fazę nauki.
+- **`PM - wesele`:** Wstrzymać do lutego 2027. Neony weselne, które mają uniwersalny charakter (np. Neon "Miłość"), przenieść jako asset group do kampanii Imiona/Neony.
+- **`PLA - catch all`:** Wstrzymać. Kampania generuje puste kliknięcia (147 kliknięć bez konwersji), kanibalizując ruch z Zakupów Google, który skuteczniej zbiera kampania Performance Max.
+- **`SW - brand tCPA`:** Uruchomić ze stawką symboliczną (5 zł/dzień), by odcinać próby licytowania marki Illuminart przez konkurentów.
+- **Remarketing dynamiczny (Nowość):** Uruchomić dedykowaną kampanię remarketingową na porzucone koszyki (Google Display / Meta) z budżetem 10–15 zł/dzień. Skoro 17 osób tygodniowo dodaje imię do koszyka, to najtańsze zamówienia do domknięcia.
+
+#### Krok 3: Kreacje i komunikacja pod Q4 (Do 1 listopada)
+- Stworzenie w PMax nowej grupy komponentów **„Świąteczny Prezent dla Dziecka”**.
+- Wykorzystanie krótkich wideo z pracy frezarki CNC i montażu LED (format pionowy YouTube Shorts).
+
+---
+
+### 11.5. Ogólna strategia poprawy sprzedaży (Poza Google Ads)
+
+#### A. Optymalizacja koszyka w sklepie (Najwyższy priorytet — najniższy koszt)
+1. **Darmowa dostawa jako dźwignia dla dodatków CNC:**  
+   Z analizy wynika, że przy zamówieniu imienia za 295–300 zł klient musi dopłacić 19 zł za wysyłkę, a darmowa dostawa aktywuje się od ok. 328 zł. Należy wdrożyć w koszyku pasek postępu:  
+   👉 *„Brakuje Ci tylko 28 zł do darmowej dostawy! Dobierz drewnianą chmurkę za 25 zł i nie płać za kuriera!”*  
+   Klient woli zapłacić 25 zł za fizyczny produkt dla dziecka niż 19 zł za kuriera. Ponieważ ozdoby wycinane są z odpadów sklejki, firma zyskuje niemal 100% marży materiałowej, odbudowując attach-rate z 18% do 50%+.
+2. **Test techniczny ścieżki zakupowej na komputerach:**  
+   Zbadanie przyczyn zerowej konwersji na Desktopie w ostatnich 3 tygodniach.
+3. **Pakiet dla rodzeństwa:**  
+   Z danych wynika, że tylko 4 na 67 zamówień zawierały więcej niż 1 imię. Wprowadzenie rabatu: *„Drugie imię dla brata lub siostry −15%”*.
+
+#### B. Nowy produkt sezonowy z odpadów CNC: Personalizowana Bombka LED / Drewniana
+- Wykorzystanie resztek sklejki do produkcji personalizowanych zawieszek na choinkę z imieniem dziecka (cena: 39–59 zł).
+- W GSC już w październiku pojawiło się zapytanie `bombka led z imieniem`. To idealny produkt o niskiej barierze wejścia oraz doskonały dodatek cross-sell do podświetlanego imienia.
+
+#### C. Wykorzystanie bazy dotychczasowych klientów (Koszt: 0 zł)
+- Sklep posiada bazę **ok. 130 zrealizowanych zamówień od maja 2026**.
+- Wysłanie na początku listopada spersonalizowanego maila / SMS-a do rodziców: podziękowanie za zaufanie + dedykowany kod na prezent świąteczny dla chrześniaka, drugiego dziecka lub znajomych.
+
+#### D. Mikroinfluencerzy parentingowi (Sprawdzony kanał)
+- Zamówienia z kodem rabatowym `Natalia` potwierdziły, że polecenia influencerek działają i przynoszą zamówienia.
+- Wysyłka 3–5 podświetlanych imion do profili parentingowych (5 000 – 25 000 obserwujących) w zamian za relację z rozpakowania i prezentacji w zaciemnionym pokoju dziecka przed Mikołajkami (koszt wytworzenia: ~180 zł).
+
+#### E. B2B i instytucje (Zapewnienie produkcji seryjnej dla maszyn CNC)
+- **Przedszkola i żłobki:** Oferta świątecznych upominków dla grup (bombki lub małe dekoracje z imionami dzieci). Jedno zamówienie z rady rodziców to 20–25 sztuk ciętych seryjnie.
+- **Neony z logo dla lokali:** Oferta neonów LED dla gastronomii, fryzjerów i salonów beauty odświeżających wystrój na sezon zimowy.
+
+---
+
+### 11.6. Kluczowe pytania operacyjne do wyjaśnienia w zespole
+
+1. **Kampanie Meta (Facebook/Instagram):** Kto zarządza kampaniami ADV+ na Facebooku i dlaczego ruch wygasł po 11 października? Jaki był ich koszt w sierpniu i wrześniu?
+2. **Sezonowość Q4 2025:** Czy dysponujecie danymi sprzedaży z BaseLinkera z listopada–grudnia 2025, by potwierdzić skalę piku świątecznego?
+3. **Kanał Allegro:** Jak kształtuje się sprzedaż imion LED na Allegro i czy planowane jest uruchomienie Allegro Ads na sezon świąteczny?
+4. **Obieg zaleceń do agencji:** Czy rekomendacje z audytów trafiają bezpośrednio do opiekuna w agencji i czy zespół otrzymuje od nich pisemny feedback?
